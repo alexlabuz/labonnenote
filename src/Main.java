@@ -1,23 +1,27 @@
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
 
     public static void main(String[] args) {
-        System.out.print("LA BONNE NOTE");
         launch(args);
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("La Bonne Note (beta)");
-        Group root = new Group();
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         // Création de la fenêtre
         primaryStage.setScene(new Scene(root, 300, 275, Color.WHITE));
         primaryStage.show();
 
+        /*--- Pas de code ici, allez dans la classe controleur ---*/
     }
 }
