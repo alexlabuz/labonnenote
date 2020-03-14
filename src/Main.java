@@ -18,10 +18,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("La Bonne Note (beta)");
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        // Création de la fenêtre
-        primaryStage.setScene(new Scene(root, 300, 275, Color.WHITE));
-        primaryStage.show();
 
-        /*--- Pas de code ici, allez dans la classe controleur ---*/
+        // Création de la fenêtre
+        primaryStage.setScene(new Scene(root, 800, 650, Color.WHITE));
+        primaryStage.show();
     }
 }
