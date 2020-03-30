@@ -3,7 +3,7 @@ Mettre la ligne suivante :
 
 import static com.company.saisirNombre.*;
  */
-package outil;
+package donnee;
 
 import java.util.Scanner;
 

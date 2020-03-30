@@ -63,7 +63,7 @@ public class Joueur {
     }
 
     public void afficheListNote(){
-        System.out.println("--- Liste de note de" + this.pseudo + " ---");
+        System.out.println("--- Liste de note de " + this.pseudo + " ---");
 
         for(Note n : this.listNote){
             System.out.println(" - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + "sur 20");
@@ -71,6 +71,5 @@ public class Joueur {
 
         System.out.println("Moyenne : " + calculMoyenne() + " sur 20");
     }
-
 
 }

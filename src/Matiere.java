@@ -1,7 +1,7 @@
 public class Matiere {
     private String nom;
 
-    public Matiere(Integer coefficient, String nom){
+    public Matiere(String nom){
         this.nom = nom;
     }
 

@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Matiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matiere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Note.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/donnee/saisirNombre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/donnee/saisirNombre.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +36,11 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\outil" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -85,22 +93,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="614" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585584334965" />
-    <state width="1877" height="210" key="GridCell.Tab.0.bottom" timestamp="1585581534407">
+    <state width="1877" height="324" key="GridCell.Tab.0.bottom" timestamp="1585589452357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585581534407" />
-    <state width="1877" height="210" key="GridCell.Tab.0.center" timestamp="1585581534407">
+    <state width="1877" height="324" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585589452357" />
+    <state width="1877" height="324" key="GridCell.Tab.0.center" timestamp="1585589452357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="210" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585581534407" />
-    <state width="1877" height="210" key="GridCell.Tab.0.left" timestamp="1585581534406">
+    <state width="1877" height="324" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585589452357" />
+    <state width="1877" height="324" key="GridCell.Tab.0.left" timestamp="1585589452357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="210" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585581534406" />
-    <state width="1877" height="210" key="GridCell.Tab.0.right" timestamp="1585581534407">
+    <state width="1877" height="324" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585589452357" />
+    <state width="1877" height="324" key="GridCell.Tab.0.right" timestamp="1585589452357">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="210" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585581534407" />
+    <state width="1877" height="324" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585589452357" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1585588613639">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1585588613639" />
     <state x="875" y="256" key="Vcs.Push.Dialog.v2" timestamp="1585584338498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
