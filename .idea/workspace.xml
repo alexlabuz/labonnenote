@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="Mise">
-      <change afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Carte.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Joueur.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Matiere.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Note.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Plateau.java" afterDir="false" />
+    <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controleur.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Matiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matiere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Note.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,20 +62,29 @@
       <option name="presentableId" value="Default" />
       <updated>1584032982537</updated>
     </task>
+    <task id="LOCAL-00001" summary="Création des classes">
+      <created>1585584335973</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1585584335973</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Création des classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Création des classes" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1585583653514">
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1585586321447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585583653514" />
-    <state x="614" y="115" key="CommitChangelistDialog2" timestamp="1584039651094">
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1585586321447" />
+    <state x="614" y="115" key="CommitChangelistDialog2" timestamp="1585584334965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="614" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584039651094" />
+    <state x="614" y="115" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585584334965" />
     <state width="1877" height="210" key="GridCell.Tab.0.bottom" timestamp="1585581534407">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -98,6 +101,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="210" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585581534407" />
+    <state x="875" y="256" key="Vcs.Push.Dialog.v2" timestamp="1585584338498">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="875" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585584338498" />
     <state x="769" y="438" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584037340019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
