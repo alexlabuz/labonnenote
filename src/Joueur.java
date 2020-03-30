@@ -72,4 +72,17 @@ public class Joueur {
         System.out.println("Moyenne : " + calculMoyenne() + " sur 20");
     }
 
+    @Override
+    public String toString() {
+        return "Joueur{" +
+                "pseudo='" + pseudo + '\'' +
+                ", specialite=" + specialite.getNom() +
+                ", age=" + age +
+                ", noteEnAttente=" + noteEnAttente +
+                ", listNote=" + listNote +
+                ", casePlateau=" + casePlateau +
+                ", motivation=" + motivation +
+                ", motivationMax=" + motivationMax +
+                '}';
+    }
 }

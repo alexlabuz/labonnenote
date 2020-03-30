@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class saisirNombre {
 
-    static int saisirEntier(int min, int max){
+    public static int saisirEntier(int min, int max){
         Scanner input = new Scanner(System.in);
         try{
             int nombre = input.nextInt();
@@ -26,7 +26,7 @@ public class saisirNombre {
         }
     }
 
-    static double saisirReel(double min, double max){
+    public static double saisirReel(double min, double max){
         Scanner input = new Scanner(System.in);
         try{
             double nombre = input.nextDouble();
