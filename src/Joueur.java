@@ -7,7 +7,7 @@ public class Joueur {
     private Integer age;
     private ArrayList<Note> noteEnAttente;
     private ArrayList<Note> listNote;
-    private Integer casePlateau;
+    private Integer positionCasePlateau;
     private Integer motivation;
     private Integer motivationMax;
 
@@ -15,9 +15,9 @@ public class Joueur {
         this.pseudo = pseudo;
         this.specialite = specialite;
         this.age = 18;
-        this.noteEnAttente = null;
+        this.noteEnAttente = initNoteEnAttente();
         this.listNote = null;
-        this.casePlateau = 0;
+        this.positionCasePlateau = 0;
 
         this.motivationMax = verifMotivationMax(age);
         this.motivation = this.motivationMax;
@@ -72,6 +72,30 @@ public class Joueur {
         System.out.println("Moyenne : " + calculMoyenne() + " sur 20");
     }
 
+    private ArrayList<Note> initNoteEnAttente(){
+        ArrayList<Note> listNoteEnAttente = new ArrayList<Note>();
+        for(Matiere m : Main.listeMatiere()){
+            listNoteEnAttente.add(new Note(0, m));
+        }
+        return listNoteEnAttente;
+    }
+
+    public ArrayList<Note> getNoteEnAttente() {
+        return noteEnAttente;
+    }
+
+    public String getPseudo() {
+        return pseudo;
+    }
+
+    public Integer getMotivation() {
+        return motivation;
+    }
+
+    public void setMotivation(Integer motivation) {
+        this.motivation = motivation;
+    }
+
     @Override
     public String toString() {
         return "Joueur{" +
@@ -80,7 +104,7 @@ public class Joueur {
                 ", age=" + age +
                 ", noteEnAttente=" + noteEnAttente +
                 ", listNote=" + listNote +
-                ", casePlateau=" + casePlateau +
+                ", casePlateau=" + positionCasePlateau +
                 ", motivation=" + motivation +
                 ", motivationMax=" + motivationMax +
                 '}';

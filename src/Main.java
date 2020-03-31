@@ -8,16 +8,56 @@ public class Main {
         ArrayList<Matiere> matieres = listeMatiere();
         ArrayList<Carte> cartes = new ArrayList<Carte>();
         ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+        Boolean end = false;
 
         Scanner input = new Scanner(System.in);
         System.out.println("----------------------\n--- LA BONNE NOTE ---\n----------------------");
         Thread.sleep(1000);
 
-        System.out.println("//-- Spécialités --//");
-        for(int i = 0; i < matieres.size(); i++){
-            System.out.println(" - Spécialité n°" + (i+1) + " - " + matieres.get(i).getNom());
+        joueurs = initialisationJoueur(matieres);
+
+        // Saisie des notes
+        System.out.println("\n//-- Saisie des notes sur 20 --//");
+        for(Joueur j: joueurs){
+            System.out.println(" - " + j.getPseudo() + " saisissez vos notes sur 20 :");
+            for(Note n : j.getNoteEnAttente()){
+
+                System.out.println("(Motivation restante : " + j.getMotivation() + ")");
+                System.out.print(n.getMatiere().getNom() + " : ");
+
+                Integer noteSaisie;
+                if(j.getMotivation() >= 20){
+                    noteSaisie = saisirEntier(0, 20);
+                }else{
+                    noteSaisie = saisirEntier(0, j.getMotivation());
+                }
+
+                n.setNoteSur20(noteSaisie);
+                j.setMotivation(j.getMotivation() - noteSaisie);
+            }
         }
 
+        System.out.println("\nQUE LE JEU ... COMMENCEEEEE !!!!");
+
+        // DEBUG : Affichage détaillé des joueurs
+        for(Joueur j : joueurs){
+            System.out.println(j.toString());
+        }
+
+        // Déroulement de la partie
+        while(!end){
+            for(Joueur j : joueurs){
+
+            }
+            end = true;
+        }
+
+    }
+
+    private static ArrayList<Joueur> initialisationJoueur(ArrayList<Matiere> listMatiere){
+        ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+
+        afficheMatiere(listMatiere);
         System.out.println("\n//-- Sélection des joueurs et des spécialité --//");
         System.out.println("Saisir (n) une fois terminé");
 
@@ -26,19 +66,20 @@ public class Main {
             String pseudo = saisiePseudo(i);
             if(!pseudo.equals("n")){
                 System.out.print(pseudo + " | numero spécialité : ");
-                Integer numSpe = (saisirEntier(1, matieres.size())-1);
-                joueurs.add(new Joueur(pseudo, matieres.get(numSpe)));
+                Integer numSpe = (saisirEntier(1, listMatiere.size()) - 1);
+                joueurs.add(new Joueur(pseudo, listMatiere.get(numSpe)));
             }else{
                 break;
             }
         }
+        return joueurs;
+    }
 
-        System.out.println("\nQUE LE JEU ... COMMENCEEEEE !!!!");
-
-        for(Joueur j : joueurs){
-            System.out.println(j.toString());
+    private static void afficheMatiere(ArrayList<Matiere> matieres){
+        System.out.println("//-- Spécialités --//");
+        for(int i = 0; i < matieres.size(); i++){
+            System.out.println(" - Spécialité n°" + (i+1) + " - " + matieres.get(i).getNom());
         }
-
     }
 
     private static String saisiePseudo(int numero){
@@ -53,7 +94,8 @@ public class Main {
         return pseudo;
     }
 
-    private static ArrayList<Matiere> listeMatiere(){
+    /* <<< --- CONTENU DU JEU --- >>> */
+    public static ArrayList<Matiere> listeMatiere(){
         ArrayList<Matiere> matiere = new ArrayList<Matiere>();
         matiere.add(new Matiere("Anglais")); // 1
         matiere.add(new Matiere("Mathématique")); // 2
@@ -65,5 +107,6 @@ public class Main {
         matiere.add(new Matiere("Serveur Web (SI5)")); // 8
         return matiere;
     }
+
 
 }
