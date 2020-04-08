@@ -19,29 +19,14 @@ public class Main {
         // Saisie des notes
         System.out.println("\n//-- Saisie des notes sur 20 --//");
         for(Joueur j: joueurs){
-            System.out.println(" - " + j.getPseudo() + " saisissez vos notes sur 20 :");
-            for(Note n : j.getNoteEnAttente()){
-
-                System.out.println("(Motivation restante : " + j.getMotivation() + ")");
-                System.out.print(n.getMatiere().getNom() + " : ");
-
-                Integer noteSaisie;
-                if(j.getMotivation() >= 20){
-                    noteSaisie = saisirEntier(0, 20);
-                }else{
-                    noteSaisie = saisirEntier(0, j.getMotivation());
-                }
-
-                n.setNoteSur20(noteSaisie);
-                j.setMotivation(j.getMotivation() - noteSaisie);
-            }
+            modifierNotesEnAttente(j);
         }
-
         System.out.println("\nQUE LE JEU ... COMMENCEEEEE !!!!");
 
         // DEBUG : Affichage détaillé des joueurs
         for(Joueur j : joueurs){
             System.out.println(j.toString());
+            System.out.println(j.retourneNote());
         }
 
         // Déroulement de la partie
@@ -73,6 +58,32 @@ public class Main {
             }
         }
         return joueurs;
+    }
+
+    // Permet au joueurs de modifier ses notes en attentes
+    private static void modifierNotesEnAttente(Joueur joueur){
+        System.out.println(" - " + joueur.getPseudo() + " saisissez vos notes sur 20 :");
+        for(Note n : joueur.getNoteEnAttente()){
+
+            System.out.println("(Motivation restante : " + joueur.getMotivation() + ")");
+            System.out.print(n.getMatiere().getNom() + " - " + n.getNoteSur20() + "/20 : +");
+
+            // Calcul le maximum que l'utilisateur peut monter sa note
+            int difference = 20 - n.getNoteSur20();
+            int motivationMax = joueur.getMotivation();
+            int saisieMax = Math.min(difference, motivationMax);
+            //---
+
+            Integer noteSaisie = saisirEntier(0, saisieMax);
+            n.setNoteSur20(n.getNoteSur20() + noteSaisie);
+
+            joueur.setMotivation(joueur.getMotivation() - noteSaisie);
+            if(joueur.getMotivation() <= 0){
+                System.out.println("Vous n'avez plus de motivation");
+                break;
+            }
+
+        }
     }
 
     private static void afficheMatiere(ArrayList<Matiere> matieres){
