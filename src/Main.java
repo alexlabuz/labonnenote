@@ -6,8 +6,9 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         ArrayList<Matiere> matieres = listeMatiere();
-        ArrayList<Carte> cartes = new ArrayList<Carte>();
         ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+        ArrayList<Carte> cartes = new ArrayList<Carte>();
+
         Boolean end = false;
 
         Scanner input = new Scanner(System.in);
