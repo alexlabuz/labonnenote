@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import static donnee.saisirNombre.*;
+import static donnee.alea.*;
 
 public class Main {
 
@@ -10,6 +11,7 @@ public class Main {
         ArrayList<Carte> cartes = new ArrayList<Carte>();
 
         Boolean end = false;
+        Integer tour = 0;
 
         Scanner input = new Scanner(System.in);
         System.out.println("----------------------\n--- LA BONNE NOTE ---\n----------------------");
@@ -24,20 +26,24 @@ public class Main {
         }
         System.out.println("\nQUE LE JEU ... COMMENCEEEEE !!!!");
 
-        // DEBUG : Affichage détaillé des joueurs
-        for(Joueur j : joueurs){
-            System.out.println(j.toString());
-            System.out.println(j.retourneNote());
-        }
-
         // Déroulement de la partie
         while(!end){
             for(Joueur j : joueurs){
+                System.out.println("Tour " + tour + " - " + j.getPseudo() + " : Saisissez une lettre pour lancer le dé");
+                input.next();
+                Thread.sleep(1200);
+
+                Integer déeNumro = alea(1,6);
+                System.out.println("Vous avez eu un " + déeNumro);
+
+                j.avanceCase(déeNumro);
+
+                System.out.println("Vous êtes sur la case ++, veuillez tirer une carte");
+                /*SUITE DU CODE : le joueur tire une carte... */
 
             }
             end = true;
         }
-
     }
 
     private static ArrayList<Joueur> initialisationJoueur(ArrayList<Matiere> listMatiere){

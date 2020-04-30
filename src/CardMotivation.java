@@ -9,6 +9,6 @@ public class CardMotivation extends Carte {
 
     @Override
     public void action(Joueur joueur) {
-        joueur.setMotivation(changeMotivation);
+        joueur.ajouteMotivation(this.changeMotivation);
     }
 }

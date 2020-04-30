@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CardAge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CardCagnote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CardIntero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CardMotivation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/donnee/alea.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Carte.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Carte.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Joueur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardMotivation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardMotivation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Carte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -25,8 +18,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -100,10 +93,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588258588750" />
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1588265222954">
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1588270851392">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588265222954" />
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588270851392" />
     <state x="614" y="115" key="CommitChangelistDialog2" timestamp="1585584334965">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -14,4 +14,19 @@ abstract class Carte {
 
     abstract void action(Joueur joueur);
 
+    public String getNom() {
+        return nom;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Integer getRarete() {
+        return rarete;
+    }
+
+    public String getImage() {
+        return image;
+    }
 }

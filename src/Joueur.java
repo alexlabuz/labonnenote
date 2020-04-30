@@ -29,6 +29,14 @@ public class Joueur {
     }
 
     /**
+     * Avance le joueur d'un certain nombre de case
+     * @param nbDeCase
+     */
+    public void avanceCase(Integer nbDeCase){
+        this.positionCasePlateau = this.positionCasePlateau + nbDeCase;
+    }
+
+    /**
      * Ajoute la note de la liste "noteEnAttente" correpondant à la matiére
      * @param matiere
      */
@@ -129,27 +137,6 @@ public class Joueur {
 
     public void setMotivation(Integer motivation) {
         this.motivation = motivation;
-    }
-
-    @Override
-    public String toString() {
-        return "Joueur{" +
-                "pseudo='" + pseudo + '\'' +
-                ", specialite=" + specialite.getNom() +
-                ", age=" + age +
-                ", listNote=" + listNote +
-                ", casePlateau=" + positionCasePlateau +
-                ", motivation=" + motivation +
-                '}';
-
-    }
-    public String retourneNote(){
-        String text = "noteEnAttente{";
-        for(Note n : this.noteEnAttente){
-            text = text + ", "+n.getNoteSur20();
-        }
-        text = text + "}";
-        return text;
     }
 }
 
