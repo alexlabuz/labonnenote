@@ -5,7 +5,7 @@ public class CardAge extends Carte {
     }
 
     @Override
-    public void action(Joueur joueur) {
+    public void action(Joueur joueur, Matiere matiere) {
         joueur.anniversaire();
         System.out.println("Joyeux anniversaire " + joueur.getPseudo() + ", vous avez maintenant " + joueur.getAge() + " ans !");
     }

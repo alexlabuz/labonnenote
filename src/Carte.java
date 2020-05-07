@@ -2,16 +2,15 @@ abstract class Carte {
 
     private String nom;
     private String description;
-    //private Integer rarete;
     private String image;
 
-    protected Carte(String nom, String description,  String image) {
+    protected Carte(String nom, String description, String image) {
         this.nom = nom;
         this.description = description;
         this.image = image;
     }
 
-    abstract void action(Joueur joueur);
+    abstract void action(Joueur joueur, Matiere matiere);
 
     public String getNom() {
         return nom;

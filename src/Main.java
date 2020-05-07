@@ -7,13 +7,14 @@ public class Main {
 
     public static void main(String[] args) throws InterruptedException {
         ArrayList<Matiere> matieres = listeMatiere();
-        ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+        ArrayList<Joueur> joueurs;
         ArrayList<Carte> cartes = listeCarte();
         ArrayList<Matiere> plateau = listMatierePlateau(matieres);
 
-        Boolean end = false;
-        Integer tour = 0;
-        Integer cagnote = 0;
+        boolean end = false;
+        int tour = 0;
+        //Integer cagnote = 0;
+        int nbJoueurFini = 0;
 
         Scanner input = new Scanner(System.in);
         System.out.println("----------------------\n--- LA BONNE NOTE ---\n----------------------");
@@ -27,48 +28,81 @@ public class Main {
         for(Joueur j: joueurs){
             modifierNotesEnAttente(j);
         }
-        System.out.println("\nQUE LE JEU ... COMMENCEEEEE !!!!");
+        System.out.println("\nQUE LE JEU ... COMMENCEEEEE !!!!\n");
 
         // Déroulement de la partie
-        while(!end){
-            System.out.print("--Tour n°" + (tour+1)+"--");
+         while(!end){
+           System.out.println("-- Tour n°" + (tour+1)+" ! --");
             for(Joueur j : joueurs){
-                Integer actionJoueur = 0;
-                while(actionJoueur != 1){
-                    System.out.println("\nAu tour de " + j.getPseudo() + " (Motivation : " + j.getMotivation() + ") - Que voulez vous faire [1 : Jouer | 2: Afficher moyenne | 3: Changer note]");
+                if(j.getPositionCasePlateau() <= plateau.size()){
+                    System.out.println("\n- Au tour de " + j.getPseudo());
+                    System.out.println("[Motivation : " + j.getMotivation() + "/" + j.motivationMax()+"]\n[" + "Case : " + j.getPositionCasePlateau() + "/31]");
 
-                    actionJoueur = saisirEntier(1,3);
-                    if(actionJoueur == 2){
-                        j.afficheListNote();
-                    }else if(actionJoueur == 3){
-                        modifierNotesEnAttente(j);
+                    int actionJoueur = 0;
+                    while(actionJoueur != 1){
+                        System.out.println("\n" + j.getPseudo() + " - Que voulez vous faire [1 : Lancer dé | 2: Afficher moyenne | 3: Changer note]");
+
+                        actionJoueur = saisirEntier(1,3);
+                        if(actionJoueur == 2){
+                            j.afficheListNote();
+                        }else if(actionJoueur == 3){
+                            modifierNotesEnAttente(j);
+                        }
+                    }
+
+                    // LANCEMENT DU Dé
+                    Thread.sleep(900);
+                    Integer deeNumero = alea(1,6);
+                    System.out.println("Vous avez eu un " + deeNumero);
+                    j.avanceCase(deeNumero);
+
+                    if(j.getPositionCasePlateau() <= plateau.size()){
+                        //PIOCHE UNE CARTE
+                        System.out.println("Vous êtes sur la case n°" + j.getPositionCasePlateau() + " : " + plateau.get(j.getPositionCasePlateau()-1).getNom() + ", Saisissez une lettre pour tirer une carte");
+                        input.next();
+                        Thread.sleep(900);
+
+                        Integer piocheCarte = alea(0, listeCarte().size()-1);
+                        Carte cartePioche = cartes.get(piocheCarte);
+
+                        System.out.println(j.getPseudo() + " : " + cartePioche.getNom() + " - " + cartePioche.getDescription());
+                        cartePioche.action(j, plateau.get(j.getPositionCasePlateau()-1));
+                        Thread.sleep(1100);
+                    }else {
+                        System.out.println(j.getPseudo() + " à terminé la partie !");
+                        nbJoueurFini++;
                     }
                 }
-
-                // LANCEMENT DU Dé
-                System.out.println(j.getPseudo() +" (Case "+ j.getPositionCasePlateau() +") : Saisissez une lettre pour lancer le dé");
-                input.next();
-                Thread.sleep(900);
-
-                Integer deeNumero = alea(1,6);
-                System.out.println("Vous avez eu un " + deeNumero);
-                j.avanceCase(deeNumero);
-                //PIOCHE UNE CARTE
-                System.out.println("Vous êtes sur la case " + j.getPositionCasePlateau() + " : " + plateau.get(j.getPositionCasePlateau()-1).getNom() + ", Saisissez une lettre pour tirer une carte");
-                input.next();
-                Thread.sleep(900);
-
-                Integer piocheCarte = alea(0, listeCarte().size()-1);
-                Carte cartePioche = listeCarte().get(piocheCarte);
-
-                System.out.println(j.getPseudo() + " : " + cartePioche.getNom() + " - " + cartePioche.getDescription());
-                cartePioche.action(j);
             }
+
+            if(nbJoueurFini >= joueurs.size()){
+                end = true;
+            }else{
+                tour++;
+            }
+       }
+        System.out.println("LE JEU EST TERMINE !");
+        Thread.sleep(1000);
+        System.out.println("Saisissez une lettre pour continuer");
+        input.next();
+
+        System.out.println("LES RESULTATS");
+
+        ArrayList<Joueur> joueurOrdreMoyenne = triJoueurParMoyenne(joueurs);
+
+        int i = 1;
+        for(Joueur j : joueurOrdreMoyenne){
+            System.out.println(i + ". " + j.getPseudo() + " - " + j.calculMoyenne() + " sur 20");
+            i++;
         }
+
+        System.out.println("\nFélicitation " + joueurOrdreMoyenne.get(0).getPseudo() + " ! Vous êtes le vainqueur de La Bonne Note !");
+        System.out.println("Saisissez une lettres pour quitter");
+        input.next();
     }
 
     private static ArrayList<Joueur> initialisationJoueur(ArrayList<Matiere> listMatiere){
-        ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
+        ArrayList<Joueur> joueurs = new ArrayList<>();
 
         System.out.println("\n//-- Sélection des joueurs et des spécialité --//");
         System.out.println("Saisir (n) une fois terminé");
@@ -78,8 +112,8 @@ public class Main {
             String pseudo = saisiePseudo(i);
             if(!pseudo.equals("n")){
                 System.out.print(pseudo + " | numero spécialité : ");
-                Integer numSpe = (saisirEntier(1, listMatiere.size()) - 1);
-                joueurs.add(new Joueur(pseudo, listMatiere.get(numSpe)));
+                int numSpecialite = (saisirEntier(1, listMatiere.size()) - 1);
+                joueurs.add(new Joueur(pseudo, listMatiere.get(numSpecialite)));
             }else{
                 break;
             }
@@ -100,16 +134,15 @@ public class Main {
 
             // Indique à l'utilisateur que le matière est sa spécialité
             if(n.getMatiere().getId().equals(joueur.getSpecialite().getId())){
-                System.out.println("-Specialité-");
+                System.out.print(n.getMatiere().getNom() + "(Spécialité) - " + n.getNoteSur20() + "/20 : +");
+            }else{
+                System.out.print(n.getMatiere().getNom() + " - " + n.getNoteSur20() + "/20 : +");
             }
-
-            System.out.print(n.getMatiere().getNom() + " - " + n.getNoteSur20() + "/20 : +");
 
             // Calcul le maximum que l'utilisateur peut monter sa note
             int difference = 20 - n.getNoteSur20();
             int motivationMax = joueur.getMotivation();
             int saisieMax = Math.min(difference, motivationMax);
-            System.out.println("DEBUG : Valeur max possible " + saisieMax);
             //---
 
             Integer noteSaisie = saisirEntier(0, saisieMax);
@@ -138,9 +171,29 @@ public class Main {
         return pseudo;
     }
 
+    private static ArrayList<Joueur> triJoueurParMoyenne(ArrayList<Joueur> listeJoueur){
+        Double moyenneMax = 0.0;
+
+        for(int i = 0 ; i < listeJoueur.size(); i++){
+
+            for(int i2 = i ; i2 < listeJoueur.size(); i2++){
+                if(listeJoueur.get(i2).calculMoyenne() > moyenneMax){
+                    Joueur joueur = listeJoueur.get(i2); // On enregistre la plus grande valeur
+                    listeJoueur.set(i2, listeJoueur.get(i)); // On deplace la première valeur du tableau à l'emplacement de la valeur enregistrer
+                    listeJoueur.set(i, joueur); // On place la plus grande valeur à la suite du tableau
+                    moyenneMax = listeJoueur.get(i2).calculMoyenne();
+                }
+            }
+            moyenneMax = 0.0;
+
+        }
+
+        return listeJoueur;
+    }
+
     /* <<< --- CONTENU DU JEU --- >>> */
     public static ArrayList<Matiere> listeMatiere(){
-        ArrayList<Matiere> matiere = new ArrayList<Matiere>();
+        ArrayList<Matiere> matiere = new ArrayList<>();
         matiere.add(new Matiere("Anglais", 0)); // 0
         matiere.add(new Matiere("Mathématique", 1)); // 1
         matiere.add(new Matiere("Culture générale", 2 )); // 2
@@ -153,23 +206,23 @@ public class Main {
     }
 
     public static ArrayList<Carte> listeCarte(){
-        ArrayList<Carte> cartes = new ArrayList<Carte>();
-        cartes.add(new CardMotivation("Bien dormi", "", "", 1));
-        cartes.add(new CardMotivation("Pas assez dormi", "", "", -1));
-        cartes.add(new CardAjoutNote("Interogation", "Allez ! je veux sur la table un stylo et une gomme", ""));
+        ArrayList<Carte> cartes = new ArrayList<>();
+        cartes.add(new CardMotivation("Bien dormi", "Quoi de mieux qu'une bonne nuit pour trouver de la motivation", "", 1));
+        cartes.add(new CardMotivation("Pas assez dormi", "Vous avez fait une nuit blanche", "", -1));
+        cartes.add(new CardAjoutNote("Interogation", "Allez ! je veux sur la table un stylo et une gomme", "", false));
         cartes.add(new CardMotivation("Mauvain temps", "Quelle pluit... pas la motivation de travailler", "", -1));
         cartes.add(new CardMotivation("Beau temps", "Quel beau soleil, cela vous donne de la motivation", "", 1));
-        cartes.add(new CardMotivation("Rendez-vous", "", "", 2));
-        cartes.add(new CardMotivation("Sèche les cours", "", "", -2));
-        cartes.add(new CardMotivation("Maladie", "", "",-3));
-        cartes.add(new CardAjoutNote("Devoir maison", "", ""));
+        cartes.add(new CardMotivation("Rendez-vous", "Vous n'allez pas en cours, super un jour de repos !", "", 2));
+        cartes.add(new CardMotivation("Sèche les cours", "Aujourd'hui ce n'était vraiment pas le bon jour", "", -2));
+        cartes.add(new CardMotivation("Maladie", "AIIGHT, la douleur que vous resentez est inimagimaginable", "",-3));
+        cartes.add(new CardAjoutNote("Devoir maison", "Quelle sera votre note", "", false));
         cartes.add(new CardAge("Anniversaire", "Vous fêtez votre anniversaire", ""));
         cartes.add(new CardAge("Maturité", "Vous devenez plus mature", ""));
         cartes.add(new CardCagnote("Cagnotte", "Vous récupérez la cagnote", ""));
         cartes.add(new CardMotivation("Lendemain de soirée", "Vous ^étse boeuréehé@dei", "", -4));
-        cartes.add(new CardAjoutNote("Travail non fait", "On ne vous félicite pas, vous avez 0 !", ""));
-        cartes.add(new CardMotivation("Eleve sérieux", "", "", 4));
-
+        cartes.add(new CardAjoutNote("Travail non fait", "On ne vous félicite pas, vous avez 0 !", "", true));
+        cartes.add(new CardAjoutNote("Controle surprise", "Avez vous bien révisé ?!", "", false));
+        cartes.add(new CardMotivation("Eleve sérieux", "Vous êtes un élève exemplaire", "", 4));
         return cartes;
     }
 

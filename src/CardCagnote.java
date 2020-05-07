@@ -5,7 +5,7 @@ public class CardCagnote extends Carte {
     }
 
     @Override
-    void action(Joueur joueur) {
+    void action(Joueur joueur, Matiere matiere) {
         System.out.println("Vous récupérez la cagnote");
     }
 }

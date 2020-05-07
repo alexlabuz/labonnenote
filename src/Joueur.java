@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class Joueur {
@@ -6,7 +8,7 @@ public class Joueur {
     private Matiere specialite;
     private Integer age;
     private ArrayList<Note> noteEnAttente;
-    private ArrayList<Note> listNote;
+    public ArrayList<Note> listNote;
     private Integer positionCasePlateau;
     private Integer motivation;
 
@@ -24,7 +26,7 @@ public class Joueur {
      * Retourne la motivation max possible
      * @return
      */
-    private Integer motivationMax(){
+    public Integer motivationMax(){
         return 90 + 5 * (this.age - 18);
     }
 
@@ -39,10 +41,7 @@ public class Joueur {
     /**
      * Ajoute la note de la liste "noteEnAttente" correpondant à la matiére
      */
-    public void ajouteNote(){
-        // Récupére dans la matière correspondant à la case de l'utilisateur
-        ArrayList<Matiere> listMatierePlateau = Main.listMatierePlateau(Main.listeMatiere());
-        Matiere matiere = listMatierePlateau.get(this.positionCasePlateau);
+    public void ajouteNote(Matiere matiere, Boolean travailNonFait){
 
         // Calcul le coefficient
         int coeficient = 1;
@@ -52,14 +51,17 @@ public class Joueur {
 
         // Récupére la note de l'utilisateur et la remet à 0 dans "noteEnAttente"
         for(Note n : this.noteEnAttente){
-            // DEBUG
-            System.out.println(matiere + " - " + n.getMatiere());
-
-            if(matiere.getId().equals(n.getMatiere().getId())){
+            if(n.getMatiere().getId() == matiere.getId()){
                 matiere.setCoef(coeficient);
-                this.listNote.add(new Note(n.getNoteSur20(), matiere));
-                n.setNoteSur20(0);
-                System.out.println(this.pseudo + " à reçu un " + n.getNoteSur20() + " sur 20 en" + matiere.getNom() + "...");
+
+                if(!travailNonFait){
+                    this.listNote.add(new Note(n.getNoteSur20(), matiere));
+                    System.out.println(this.pseudo + " à reçu un " + n.getNoteSur20() + " sur 20 en " + matiere.getNom() + "...");
+                    n.setNoteSur20(0);
+                }else{
+                    this.listNote.add(new Note(0, matiere));
+                    System.out.println(this.pseudo + " à reçu un 0 pointé en " + matiere.getNom() + "...");
+                }
                 break;
             }
         }
@@ -70,8 +72,8 @@ public class Joueur {
      * @return
      */
     public Double calculMoyenne(){
-        Double totalSomme = null; // Somme des notes (avec coeficients)
-        Double effectif = null; // Nombre de note (en comptent les coeficients)
+        double totalSomme = 0.0; // Somme des notes (avec coeficients)
+        double effectif = 0.0; // Nombre de note (en comptent les coeficients)
 
         for(Note n : this.listNote){
             Integer coef = n.getMatiere().getCoef();
@@ -91,7 +93,11 @@ public class Joueur {
 
         if(this.listNote.size() > 0){
             for(Note n : this.listNote){
-                System.out.println(" - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + "sur 20");
+                if(n.getMatiere().getCoef() == 3){
+                    System.out.println(" - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20 (Coef 3)");
+                }else{
+                    System.out.println(" - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20");
+                }
             }
 
             System.out.println("Moyenne : " + calculMoyenne() + " sur 20");

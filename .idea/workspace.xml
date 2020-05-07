@@ -4,22 +4,21 @@
     <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="Avancement du code de la partie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardAge.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/CardAge.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardAjoutNote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/CardAjoutNote.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardCagnote.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/CardCagnote.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardIntero.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardMotivation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/CardMotivation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Carte.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Carte.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Joueur.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Plateau.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Plateau.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/donnee/saisirNombre.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/donnee/saisirNombre.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CardAge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardAge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardAjoutNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardAjoutNote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CardCagnote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardCagnote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardIntero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardAjoutNote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CardMotivation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CardMotivation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Carte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Matiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matiere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plateau.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/donnee/saisirNombre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/donnee/saisirNombre.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +47,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -106,10 +106,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588258588750" />
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1588859671617">
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1588870708812">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588859671617" />
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1588870708812" />
     <state x="910" y="133" key="CommitChangelistDialog2" timestamp="1588276030651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -118,22 +118,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588425479209" />
-    <state width="1877" height="880" key="GridCell.Tab.0.bottom" timestamp="1588866155610">
+    <state width="1877" height="882" key="GridCell.Tab.0.bottom" timestamp="1588887673557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="880" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588866155610" />
-    <state width="1877" height="880" key="GridCell.Tab.0.center" timestamp="1588866155610">
+    <state width="1877" height="882" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588887673557" />
+    <state width="1877" height="882" key="GridCell.Tab.0.center" timestamp="1588887673557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="880" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588866155610" />
-    <state width="1877" height="880" key="GridCell.Tab.0.left" timestamp="1588866155610">
+    <state width="1877" height="882" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588887673557" />
+    <state width="1877" height="882" key="GridCell.Tab.0.left" timestamp="1588887673557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="880" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588866155610" />
-    <state width="1877" height="880" key="GridCell.Tab.0.right" timestamp="1588866155610">
+    <state width="1877" height="882" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588887673557" />
+    <state width="1877" height="882" key="GridCell.Tab.0.right" timestamp="1588887673557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="880" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588866155610" />
+    <state width="1877" height="882" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588887673557" />
+    <state x="725" y="323" key="SettingsEditor" timestamp="1588886077690">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="725" y="323" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588886077690" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1588860134237">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -154,9 +158,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585691188883" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585690622191">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1588870168532">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585690622191" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1588870168532" />
   </component>
 </project>

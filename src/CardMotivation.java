@@ -8,7 +8,7 @@ public class CardMotivation extends Carte {
     }
 
     @Override
-    public void action(Joueur joueur) {
+    public void action(Joueur joueur, Matiere matiere) {
         joueur.ajouteMotivation(this.valeurChangeMotivation);
     }
 }

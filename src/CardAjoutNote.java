@@ -1,10 +1,14 @@
 public class CardAjoutNote extends Carte {
+    private Boolean travailNonFait;
 
-    public CardAjoutNote(String nom, String description, String image){
+    public CardAjoutNote(String nom, String description, String image, Boolean travailNonFait){
         super(nom, description, image);
+        this.travailNonFait = travailNonFait;
     }
 
-    public void action(Joueur joueur){
-        joueur.ajouteNote();
+    @Override
+    void action(Joueur joueur, Matiere matiere) {
+        joueur.ajouteNote(matiere, travailNonFait);
     }
+
 }

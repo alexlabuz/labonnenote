@@ -13,7 +13,7 @@ public class saisirNombre {
         Scanner input = new Scanner(System.in);
         try{
             int nombre = input.nextInt();
-            if((nombre >= min && nombre <= max) || (min == 0 && max == 0)){
+            if(nombre >= min && nombre <= max){
                 return nombre;
             }else{
                 System.out.print("Erreur de saisie, réessayez : ");
