@@ -1,10 +1,12 @@
 public class Matiere {
     private String nom;
-    private int coef;
+    private Integer coef;
+    private Integer id;
 
-    public Matiere(String nom){
+    public Matiere(String nom, Integer id){
         this.nom = nom;
         this.coef = 1;
+        this.id = id;
     }
 
     public int getCoef() {
@@ -17,5 +19,9 @@ public class Matiere {
 
     public String getNom() {
         return nom;
+    }
+
+    public Integer getId() {
+        return id;
     }
 }

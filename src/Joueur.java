@@ -15,7 +15,7 @@ public class Joueur {
         this.specialite = specialite;
         this.age = 18;
         this.noteEnAttente = initNoteEnAttente();
-        this.listNote = null;
+        this.listNote = new ArrayList<Note>();
         this.positionCasePlateau = 0;
         this.motivation = motivationMax();
     }
@@ -38,9 +38,12 @@ public class Joueur {
 
     /**
      * Ajoute la note de la liste "noteEnAttente" correpondant à la matiére
-     * @param matiere
      */
-    public void ajouteNote(Matiere matiere){
+    public void ajouteNote(){
+        // Récupére dans la matière correspondant à la case de l'utilisateur
+        ArrayList<Matiere> listMatierePlateau = Main.listMatierePlateau(Main.listeMatiere());
+        Matiere matiere = listMatierePlateau.get(this.positionCasePlateau);
+
         // Calcul le coefficient
         int coeficient = 1;
         if(matiere == this.specialite){
@@ -49,11 +52,14 @@ public class Joueur {
 
         // Récupére la note de l'utilisateur et la remet à 0 dans "noteEnAttente"
         for(Note n : this.noteEnAttente){
-            if(matiere == n.getMatiere()){
+            // DEBUG
+            System.out.println(matiere + " - " + n.getMatiere());
+
+            if(matiere.getId().equals(n.getMatiere().getId())){
                 matiere.setCoef(coeficient);
                 this.listNote.add(new Note(n.getNoteSur20(), matiere));
                 n.setNoteSur20(0);
-                System.out.println(this.pseudo + " à reçu un " + n.getNoteSur20() + " sur 20...");
+                System.out.println(this.pseudo + " à reçu un " + n.getNoteSur20() + " sur 20 en" + matiere.getNom() + "...");
                 break;
             }
         }
@@ -83,11 +89,15 @@ public class Joueur {
     public void afficheListNote(){
         System.out.println("--- Liste de note de " + this.pseudo + " ---");
 
-        for(Note n : this.listNote){
-            System.out.println(" - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + "sur 20");
-        }
+        if(this.listNote.size() > 0){
+            for(Note n : this.listNote){
+                System.out.println(" - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + "sur 20");
+            }
 
-        System.out.println("Moyenne : " + calculMoyenne() + " sur 20");
+            System.out.println("Moyenne : " + calculMoyenne() + " sur 20");
+        }else{
+            System.out.println("Vous n'avez pas encore de note");
+        }
     }
 
     /**
@@ -107,8 +117,13 @@ public class Joueur {
      * @param motivationPlus
      */
     public void ajouteMotivation(Integer motivationPlus){
-        System.out.println(this.pseudo + "Gagne " + this.motivation + " point de motivation");
-        this.motivation = this.motivation + motivationPlus;
+        if(motivationPlus >= 0){
+            this.motivation = this.motivation + motivationPlus;
+            System.out.println(this.pseudo + " gagne " + motivationPlus + " point de motivation");
+        }else{
+            this.motivation = this.motivation - Math.abs(motivationPlus);
+            System.out.println(this.pseudo + " perd " + Math.abs(motivationPlus) + " point de motivation");
+        }
 
         if(this.motivation > motivationMax()){
             this.motivation = motivationMax();
@@ -121,6 +136,14 @@ public class Joueur {
         }
     }
 
+    /**
+     * Monte le niveau du joueur de +1
+     */
+    public void anniversaire(){
+        this.age++;
+        this.motivation = this.motivation + 5;
+    }
+
 
     /* <<< --- GUETTERS ET SETTERS--- >>> */
     public ArrayList<Note> getNoteEnAttente() {
@@ -131,6 +154,10 @@ public class Joueur {
         return pseudo;
     }
 
+    public Matiere getSpecialite() {
+        return specialite;
+    }
+
     public Integer getMotivation() {
         return motivation;
     }
@@ -138,5 +165,12 @@ public class Joueur {
     public void setMotivation(Integer motivation) {
         this.motivation = motivation;
     }
-}
 
+    public Integer getPositionCasePlateau() {
+        return positionCasePlateau;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+}

@@ -4,7 +4,11 @@ public class Plateau {
 
     private ArrayList<Matiere> listMatiereCase;
 
-    public Plateau(){
-        //Création du plateau
+    public Plateau(ArrayList<Matiere> listMatiereCase){
+        this.listMatiereCase = listMatiereCase;
+    }
+
+    public ArrayList<Matiere> getListMatiereCase() {
+        return listMatiereCase;
     }
 }
