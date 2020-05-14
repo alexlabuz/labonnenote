@@ -7,8 +7,8 @@ public class CardAjoutNote extends Carte {
     }
 
     @Override
-    void action(Joueur joueur, Matiere matiere) {
-        joueur.ajouteNote(matiere, travailNonFait);
+    void action(Joueur joueur, Matiere matiere, Cagnote cagnote) {
+        joueur.ajouteNote(matiere, this.travailNonFait);
     }
 
 }

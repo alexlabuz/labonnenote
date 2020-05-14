@@ -1,5 +1,3 @@
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class Joueur {
@@ -8,7 +6,7 @@ public class Joueur {
     private Matiere specialite;
     private Integer age;
     private ArrayList<Note> noteEnAttente;
-    public ArrayList<Note> listNote;
+    private ArrayList<Note> listNote;
     private Integer positionCasePlateau;
     private Integer motivation;
 
@@ -17,14 +15,13 @@ public class Joueur {
         this.specialite = specialite;
         this.age = 18;
         this.noteEnAttente = initNoteEnAttente();
-        this.listNote = new ArrayList<Note>();
+        this.listNote = new ArrayList<>();
         this.positionCasePlateau = 0;
         this.motivation = motivationMax();
     }
 
     /**
-     * Retourne la motivation max possible
-     * @return
+     * @return Retourne la motivation max possible
      */
     public Integer motivationMax(){
         return 90 + 5 * (this.age - 18);
@@ -32,7 +29,7 @@ public class Joueur {
 
     /**
      * Avance le joueur d'un certain nombre de case
-     * @param nbDeCase
+     * @param nbDeCase Nombre de case auquel le joueur doit avancer
      */
     public void avanceCase(Integer nbDeCase){
         this.positionCasePlateau = this.positionCasePlateau + nbDeCase;
@@ -42,7 +39,6 @@ public class Joueur {
      * Ajoute la note de la liste "noteEnAttente" correpondant à la matiére
      */
     public void ajouteNote(Matiere matiere, Boolean travailNonFait){
-
         // Calcul le coefficient
         int coeficient = 1;
         if(matiere == this.specialite){
@@ -51,7 +47,7 @@ public class Joueur {
 
         // Récupére la note de l'utilisateur et la remet à 0 dans "noteEnAttente"
         for(Note n : this.noteEnAttente){
-            if(n.getMatiere().getId() == matiere.getId()){
+            if(n.getMatiere().getId().equals(matiere.getId())){
                 matiere.setCoef(coeficient);
 
                 if(!travailNonFait){
@@ -68,8 +64,7 @@ public class Joueur {
     }
 
     /**
-     * Retourne la moyenne du joueur
-     * @return
+     * @return Retourne la moyenne du joueur
      */
     public Double calculMoyenne(){
         double totalSomme = 0.0; // Somme des notes (avec coeficients)
@@ -108,10 +103,10 @@ public class Joueur {
 
     /**
      * Met toutes les notes en attente à 0
-     * @return
+     * @return retourne la liste de note initialisé à 0
      */
     private ArrayList<Note> initNoteEnAttente(){
-        ArrayList<Note> listNoteEnAttente = new ArrayList<Note>();
+        ArrayList<Note> listNoteEnAttente = new ArrayList<>();
         for(Matiere m : Main.listeMatiere()){
             listNoteEnAttente.add(new Note(0, m));
         }
@@ -120,20 +115,24 @@ public class Joueur {
 
     /**
      * Permet d'ajouter ou de retirer de la motivation
-     * @param motivationPlus
+     * @param motivationPlus Valeur positive ou négative de motivation à ajouter
      */
-    public void ajouteMotivation(Integer motivationPlus){
+    public void ajouteMotivation(Integer motivationPlus, Cagnote cagnote){
+        this.motivation += motivationPlus;
+
         if(motivationPlus >= 0){
-            this.motivation = this.motivation + motivationPlus;
-            System.out.println(this.pseudo + " gagne " + motivationPlus + " point de motivation");
+            System.out.println(this.pseudo + " gagne " + motivationPlus + " point de motivation(s)");
         }else{
-            this.motivation = this.motivation - Math.abs(motivationPlus);
-            System.out.println(this.pseudo + " perd " + Math.abs(motivationPlus) + " point de motivation");
+            System.out.println(this.pseudo + " perd " + Math.abs(motivationPlus) + " point de motivation(s)");
         }
 
-        if(this.motivation > motivationMax()){
-            this.motivation = motivationMax();
-            System.out.println("Cela dépasse la motivation max, " + this.pseudo + " à donc " + this.motivation + " de motivation");
+        // Si le joueur à un nombre négatif de motivation on le met à 0
+        if(this.motivation > this.motivationMax()){
+            int motivationEnTrop = this.motivation - this.motivationMax();
+            cagnote.setPointMotivation(motivationEnTrop);
+
+            this.motivation = this.motivationMax();
+            System.out.println("Cela dépasse la motivation max, " + this.pseudo + " envoie donc " + motivationEnTrop + " point de motivation dans la cagnote");
         }else if(this.motivation < 0){
             this.motivation = 0;
             System.out.println(this.pseudo + " n'a plus de motivation");
