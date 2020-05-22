@@ -1,3 +1,5 @@
+package model;
+
 public class CardAge extends Carte {
 
     public CardAge(String nom, String description,  String image){

@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="Avancement du code de la partie">
+      <change afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/SaisiePseudo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/base.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/game.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/saisiePseudo.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Cagnote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardAge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardAjoutNote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardCagnote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardMotivation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Carte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Joueur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Matiere.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Note.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Plateau.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cagnote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Cagnote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardAge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CardAge.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardAjoutNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CardAjoutNote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardCagnote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CardCagnote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CardMotivation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CardMotivation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Carte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Carte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Joueur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Matiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Matiere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Note.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Plateau.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Plateau.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +40,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -99,10 +126,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588258588750" />
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1589480918037">
+    <state x="733" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590175550466">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1589480918037" />
+    <state x="733" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590175550466" />
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser" timestamp="1590176129750">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1590176129750" />
     <state x="910" y="133" key="CommitChangelistDialog2" timestamp="1588276030651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -111,22 +142,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590159395124" />
-    <state width="1877" height="882" key="GridCell.Tab.0.bottom" timestamp="1590173082008">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom" timestamp="1590185397729">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="882" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590173082008" />
-    <state width="1877" height="882" key="GridCell.Tab.0.center" timestamp="1590173082008">
+    <state width="1877" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590185397729" />
+    <state width="1877" height="254" key="GridCell.Tab.0.center" timestamp="1590185397729">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="882" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590173082008" />
-    <state width="1877" height="882" key="GridCell.Tab.0.left" timestamp="1590173082008">
+    <state width="1877" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590185397729" />
+    <state width="1877" height="254" key="GridCell.Tab.0.left" timestamp="1590185397729">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="882" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590173082008" />
-    <state width="1877" height="882" key="GridCell.Tab.0.right" timestamp="1590173082008">
+    <state width="1877" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590185397729" />
+    <state width="1877" height="254" key="GridCell.Tab.0.right" timestamp="1590185397729">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="882" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590173082008" />
+    <state width="1877" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590185397729" />
     <state x="725" y="189" key="SettingsEditor" timestamp="1589470495302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

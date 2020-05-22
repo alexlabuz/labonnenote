@@ -1,3 +1,8 @@
+package model;
+
+import controller.Controller;
+import controller.Game;
+
 import java.util.ArrayList;
 
 public class Joueur {
@@ -107,7 +112,7 @@ public class Joueur {
      */
     private ArrayList<Note> initNoteEnAttente(){
         ArrayList<Note> listNoteEnAttente = new ArrayList<>();
-        for(Matiere m : Main.listeMatiere()){
+        for(Matiere m : Game.listeMatiere()){
             listNoteEnAttente.add(new Note(0, m));
         }
         return listNoteEnAttente;

@@ -1,3 +1,5 @@
+package model;
+
 public class CardAjoutNote extends Carte {
     private Boolean travailNonFait;
 
@@ -7,7 +9,7 @@ public class CardAjoutNote extends Carte {
     }
 
     @Override
-    void action(Joueur joueur, Matiere matiere, Cagnote cagnote) {
+    public void action(Joueur joueur, Matiere matiere, Cagnote cagnote) {
         joueur.ajouteNote(matiere, this.travailNonFait);
     }
 

@@ -1,3 +1,5 @@
+package model;
+
 public class Matiere {
     private String nom;
     private Integer coef;

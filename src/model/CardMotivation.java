@@ -1,3 +1,5 @@
+package model;
+
 public class CardMotivation extends Carte {
 
     private Integer valeurChangeMotivation;
