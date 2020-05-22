@@ -24,7 +24,7 @@ public class Joueur {
      * @return Retourne la motivation max possible
      */
     public Integer motivationMax(){
-        return 90 + 5 * (this.age - 18);
+        return 80 + 5 * (this.age - 18);
     }
 
     /**
