@@ -6,8 +6,11 @@ import static donnee.alea.*;
 
 public class Main {
 
-
     public static void main(String[] args) throws InterruptedException {
+        controller();
+    }
+
+    public static void controller() throws InterruptedException {
         ArrayList<Matiere> matieres = listeMatiere();
         ArrayList<Joueur> joueurs;
         ArrayList<Carte> cartes = listeCarte();
