@@ -1,3 +1,5 @@
+package model;
+
 public class Note {
     private Integer noteSur20;
     private Matiere matiere;
