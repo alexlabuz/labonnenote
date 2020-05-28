@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="base" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <Menu mnemonicParsing="false" text="Aide">
+            <MenuItem mnemonicParsing="false" text="A propos de ..." />
+         </Menu>
+      </MenuBar>
+   </top>
+   <left>
+      <!-- SAISIE DES PSEUDOS -->
+      <VBox alignment="CENTER" prefHeight="375.0" prefWidth="112.0" BorderPane.alignment="CENTER">
+         <Label alignment="CENTER" contentDisplay="CENTER" text="Saisissez pseudo" textAlignment="CENTER" />
+         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 1" />
+            <TextField fx:id="pseudo1" onKeyPressed="#verifPseudo" promptText="Pseudo" />
+            <TextField fx:id="matiereUser1" />
+         </VBox>
+         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 2" />
+            <TextField fx:id="pseudo2" onKeyPressed="#verifPseudo" promptText="Pseudo" />
+            <TextField fx:id="matiereUser2" />
+         </VBox>
+         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 3" />
+            <TextField fx:id="pseudo3" onKeyPressed="#verifPseudo" promptText="Pseudo" />
+            <TextField fx:id="matiereUser3" />
+         </VBox>
+         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 4" />
+            <TextField fx:id="pseudo4" onKeyPressed="#verifPseudo" promptText="Pseudo" />
+            <TextField fx:id="matiereUser4" />
+         </VBox>
+         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 5" />
+            <TextField fx:id="pseudo5" onKeyPressed="#verifPseudo" promptText="Pseudo" />
+            <TextField fx:id="matiereUser5" />
+         </VBox>
+         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
+            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 6" />
+            <TextField fx:id="pseudo6" onKeyPressed="#verifPseudo" promptText="Pseudo" />
+            <TextField fx:id="matiereUser6" />
+         </VBox>
+         <Button fx:id="buttonValidPseudo" disable="true" mnemonicParsing="false" onAction="#validPseudo" text="Valider" />
+      </VBox>
+   </left>
+</BorderPane>
