@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="Avancement du code de la partie">
+      <change afterPath="$PROJECT_DIR$/src/view/help.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Cagnote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardAge.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardAjoutNote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardCagnote.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/CardMotivation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Carte.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Joueur.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Matiere.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Note.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Plateau.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/view/base.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/view/saisiePseudo.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/view/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/base.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/sample.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/saisiePseudo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +27,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="JavaFXApplication" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="bdc344f57f4f1125322cc7f7fab080a55a85db9f" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
@@ -54,7 +66,20 @@
       <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\outil" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.Controller" />
+      <module name="la_bonne_note" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="la_bonne_note" />
@@ -68,6 +93,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Controller" />
       </list>
     </recent_temporary>
   </component>
@@ -118,22 +144,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588425479209" />
-    <state width="1877" height="254" key="GridCell.Tab.0.bottom" timestamp="1590683746152">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom" timestamp="1590692661184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590683746152" />
-    <state width="1877" height="254" key="GridCell.Tab.0.center" timestamp="1590683746152">
+    <state width="1877" height="199" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590692661184" />
+    <state width="1877" height="199" key="GridCell.Tab.0.center" timestamp="1590692661184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590683746152" />
-    <state width="1877" height="254" key="GridCell.Tab.0.left" timestamp="1590683746152">
+    <state width="1877" height="199" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590692661184" />
+    <state width="1877" height="199" key="GridCell.Tab.0.left" timestamp="1590692661184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590683746152" />
-    <state width="1877" height="254" key="GridCell.Tab.0.right" timestamp="1590683746152">
+    <state width="1877" height="199" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590692661184" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right" timestamp="1590692661184">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="254" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590683746152" />
+    <state width="1877" height="199" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590692661184" />
     <state x="725" y="189" key="SettingsEditor" timestamp="1589470495302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
