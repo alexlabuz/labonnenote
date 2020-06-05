@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -9,68 +8,45 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <Menu mnemonicParsing="false" text="Jeu">
-            <items>
-               <MenuItem mnemonicParsing="false" text="Quitter" onAction="#exitProgram"/>
-            </items>
+            <MenuItem mnemonicParsing="false" onAction="#exitProgram" text="Quitter" />
          </Menu>
          <Menu mnemonicParsing="false" text="Aide">
-            <MenuItem mnemonicParsing="false" text="A propos de ..." onAction="#helpWindow" />
+            <MenuItem mnemonicParsing="false" onAction="#helpWindow" text="A propos de ..." />
          </Menu>
       </MenuBar>
    </top>
    <left>
       <!-- SAISIE DES PSEUDOS -->
-      <VBox alignment="CENTER" prefHeight="375.0" prefWidth="112.0" BorderPane.alignment="CENTER">
-         <Label alignment="CENTER" contentDisplay="CENTER" text="Saisissez pseudo" textAlignment="CENTER" />
-         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
-            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 1" />
-            <TextField fx:id="pseudo1" onKeyPressed="#verifPseudo" promptText="Pseudo" />
-            <TextField fx:id="matiereUser1" />
-         </VBox>
-         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
-            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 2" />
-            <TextField fx:id="pseudo2" onKeyPressed="#verifPseudo" promptText="Pseudo" />
-            <TextField fx:id="matiereUser2" />
-         </VBox>
-         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
-            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 3" />
-            <TextField fx:id="pseudo3" onKeyPressed="#verifPseudo" promptText="Pseudo" />
-            <TextField fx:id="matiereUser3" />
-         </VBox>
-         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
-            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 4" />
-            <TextField fx:id="pseudo4" onKeyPressed="#verifPseudo" promptText="Pseudo" />
-            <TextField fx:id="matiereUser4" />
-         </VBox>
-         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
-            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 5" />
-            <TextField fx:id="pseudo5" onKeyPressed="#verifPseudo" promptText="Pseudo" />
-            <TextField fx:id="matiereUser5" />
-         </VBox>
-         <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="100.0">
-            <Label alignment="TOP_LEFT" contentDisplay="CENTER" text="Joueur 6" />
-            <TextField fx:id="pseudo6" onKeyPressed="#verifPseudo" promptText="Pseudo" />
-            <TextField fx:id="matiereUser6" />
-         </VBox>
-         <Button fx:id="buttonValidPseudo" disable="true" mnemonicParsing="false" onAction="#validPseudo" text="Valider" />
+      <VBox fx:id="vBoxLeft" alignment="CENTER" BorderPane.alignment="CENTER">
+         <Label alignment="CENTER" contentDisplay="CENTER" text="Saisissez pseudo" textAlignment="CENTER">
+            <font>
+               <Font size="18.0" />
+            </font>
+         </Label>
+         <Button fx:id="btValidPseudo" disable="true" mnemonicParsing="false" onAction="#validPseudo" text="Valider" />
       </VBox>
    </left>
-   <bottom>
-      <VBox BorderPane.alignment="CENTER" />
-   </bottom>
    <right>
-      <VBox alignment="TOP_CENTER" prefHeight="455.0" prefWidth="213.0" BorderPane.alignment="CENTER">
-         <Label fx:id="listeJoueurText" alignment="TOP_CENTER" contentDisplay="TOP" text="Bienvenue sur La Bonne Note" BorderPane.alignment="CENTER">
+      <!-- SAISIE DES NOTES EN ATTENTES -->
+      <VBox fx:id="vBoxRight" alignment="CENTER" BorderPane.alignment="CENTER">
+         <Label text="Saisie des notes">
             <font>
-               <Font size="16.0" />
+               <Font size="18.0" />
             </font>
-            <VBox.margin>
-               <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
-            </VBox.margin>
          </Label>
+         <Label ellipsisString="" prefWidth="120.0" text="Saisissez combien vous souhaitez ajouter à chaques notes" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
+         <Button fx:id="btValidNote" disable="true" mnemonicParsing="false" text="Valider" />
+         <HBox>
+            <Label text="Vos point(s) motivation(s) : "/>
+            <Label fx:id="textPtMotivation" text="0"/>
+         </HBox>
       </VBox>
    </right>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
+      <Label fx:id="listeJoueurText" alignment="TOP_CENTER" contentDisplay="TOP" text="Bienvenue sur La Bonne Note" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </center>
 </BorderPane>

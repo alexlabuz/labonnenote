@@ -26,4 +26,9 @@ public class Matiere {
     public Integer getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return this.nom;
+    }
 }
