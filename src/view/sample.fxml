@@ -25,6 +25,9 @@
             </font>
          </Label>
          <Button fx:id="btValidPseudo" disable="true" mnemonicParsing="false" onAction="#validPseudo" text="Valider" />
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </VBox>
    </left>
    <right>
@@ -41,6 +44,9 @@
             <Label text="Vos point(s) motivation(s) : " />
             <Label fx:id="textPtMotivationRestant" text="0" />
          </HBox>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
       </VBox>
    </right>
    <center>
@@ -63,19 +69,19 @@
                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                   </HBox.margin>
                </Button>
-               <Button fx:id="btVoirMoyenne" mnemonicParsing="false" text="Voir moyenne">
+               <Button fx:id="btVoirMoyenne" mnemonicParsing="false" onAction="#afficheMoyenne" text="Voir moyenne">
                   <HBox.margin>
                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                   </HBox.margin>
                </Button>
             </HBox>
-            <Label fx:id="labelIndicationJeu" text="">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-         </VBox>
       </VBox>
+      <Label fx:id="labelIndicationJeu" textAlignment="CENTER">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </VBox>
    </center>
    <bottom>
       <VBox fx:id="vBoxBottom" alignment="CENTER" BorderPane.alignment="CENTER">

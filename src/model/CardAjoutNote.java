@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.control.Label;
+
 public class CardAjoutNote extends Carte {
     private Boolean travailNonFait;
 
@@ -9,8 +11,8 @@ public class CardAjoutNote extends Carte {
     }
 
     @Override
-    public void action(Joueur joueur, Matiere matiere, Cagnote cagnote) {
-        joueur.ajouteNote(matiere, this.travailNonFait);
+    public void action(Joueur joueur, Matiere matiere, Cagnote cagnote, Label labelIndication) {
+        joueur.ajouteNote(matiere, this.travailNonFait, labelIndication);
     }
 
 }

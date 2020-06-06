@@ -72,7 +72,7 @@ public class Game {
                         Carte cartePioche = cartes.get(numAleaCarte);
 
                         System.out.println(j.getPseudo() + " : " + cartePioche.getNom() + " - " + cartePioche.getDescription());
-                        cartePioche.action(j, plateau.get(j.getPositionCasePlateau()-1), cagnote);
+                        cartePioche.action(j, plateau.get(j.getPositionCasePlateau()-1), cagnote, null);
                         Thread.sleep(1100);
                     }else{
                         System.out.println(j.getPseudo() + " à terminé la partie !");
@@ -177,7 +177,7 @@ public class Game {
         return pseudo;
     }
 
-    private static ArrayList<Joueur> triJoueurParMoyenne(ArrayList<Joueur> listeJoueur){
+    public static ArrayList<Joueur> triJoueurParMoyenne(ArrayList<Joueur> listeJoueur){
         Double moyenneMax = 0.0;
 
         for(int i = 0 ; i < listeJoueur.size(); i++){
@@ -272,7 +272,5 @@ public class Game {
         matieres.add(listeMatiere.get(6)); // 31
         return matieres;
     }
-
-
 
 }

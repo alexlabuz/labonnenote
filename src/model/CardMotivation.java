@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.control.Label;
+
 public class CardMotivation extends Carte {
 
     private Integer valeurChangeMotivation;
@@ -10,7 +12,7 @@ public class CardMotivation extends Carte {
     }
 
     @Override
-    public void action(Joueur joueur, Matiere matiere, Cagnote cagnote) {
-        joueur.ajouteMotivation(this.valeurChangeMotivation, cagnote);
+    public void action(Joueur joueur, Matiere matiere, Cagnote cagnote, Label labelIndication) {
+        joueur.ajouteMotivation(this.valeurChangeMotivation, cagnote, labelIndication);
     }
 }

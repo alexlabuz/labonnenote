@@ -1,5 +1,7 @@
 package model;
 
+import javafx.scene.control.Label;
+
 public class CardCagnote extends Carte {
 
     public CardCagnote(String nom, String description,  String image){
@@ -7,9 +9,15 @@ public class CardCagnote extends Carte {
     }
 
     @Override
-    public void action(Joueur joueur, Matiere matiere, Cagnote cagnote) {
-        System.out.println("Vous récupérez la cagnote");
-        joueur.ajouteMotivation(cagnote.getPointMotivation(), cagnote);
+    public void action(Joueur joueur, Matiere matiere, Cagnote cagnote, Label labelIndication) {
+        joueur.ajouteMotivation(cagnote.getPointMotivation(), cagnote, labelIndication);
         cagnote.setPointMotivation(0);
+
+        String text = "Vous récupérez la cagnote";
+        if(labelIndication != null){
+            labelIndication.setText(text);
+        }else{
+            System.out.println(text);
+        }
     }
 }

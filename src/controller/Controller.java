@@ -1,21 +1,21 @@
 package controller;
 
 import donnee.alea;
-import javafx.animation.KeyFrame;
-import javafx.animation.PauseTransition;
-import javafx.animation.Timeline;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import javafx.animation.*;
+import javafx.application.Platform;
+import javafx.collections.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.*;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import model.*;
@@ -28,7 +28,7 @@ import static controller.Game.listeCarte;
 import static donnee.alea.alea;
 
 public class Controller {
-    private ArrayList<Matiere> matieres = listeMatiere();
+    private ArrayList<Matiere> matieres = Game.listeMatiere();
     private ArrayList<Joueur> joueurs = new ArrayList<>();
     ArrayList<Carte> cartes = listeCarte();
     ArrayList<Matiere> plateau = listMatierePlateau(matieres);
@@ -85,6 +85,8 @@ public class Controller {
             this.listLabelNotes[i].setText(n.getNoteSur20() + "/20");
             i++;
         }
+
+        afficheStatJoueur();
     }
 
     @FXML
@@ -122,7 +124,7 @@ public class Controller {
 
 
                         label.setText(j.getPseudo() + " : " + cartePioche.getNom() + " - " + cartePioche.getDescription());
-                        cartePioche.action(j, plateau.get(j.getPositionCasePlateau() - 1), cagnote);
+                        cartePioche.action(j, plateau.get(j.getPositionCasePlateau() - 1), cagnote, this.labelIndicationJeu);
                         joueurSuivant(vBox);
                     });
                     wait2.play();
@@ -143,13 +145,65 @@ public class Controller {
         Button btNext = new Button("Joueur suivant");
         vBox.getChildren().add(btNext);
         btNext.setOnMouseClicked(mouseEvent -> {
+            labelIndicationJeu.setText("");
             this.vBoxJeu.getChildren().remove(vBox);
-            this.numeroTour++;
-            affichageGame();
-            afficheStatJoueur();
-            enableButtonJeu(true);
-        });
 
+            if(this.nbJoueurFini > this.joueurs.size()-1){
+                finPartie();
+            }else{
+                this.numeroTour++;
+                while (this.joueurs.get(numeroJoueurTour()).getPositionCasePlateau() > 31){
+                    this.numeroTour++;
+                }
+                affichageGame();
+                enableButtonJeu(true);
+            }
+        });
+    }
+
+    private void finPartie(){
+        this.labelAfficheInfoJoueur.setText("LE JEU EST TERMINE !");
+        vBoxJeu.setVisible(false);
+        Button btFin = new Button("Accéder au résultat");
+        vBoxCenter.getChildren().add(btFin);
+
+        btFin.setOnMouseClicked(mouseEvent -> {
+            vBoxCenter.getChildren().remove(btFin);
+            this.labelAfficheInfoJoueur.setText("LES RESULTAT!");
+
+            ArrayList<Joueur> joueurOrdreMoyenne = Game.triJoueurParMoyenne(joueurs);
+
+            String text = "";
+            Integer i = 1;
+            for(Joueur j : joueurOrdreMoyenne){
+                text += i + ". " + j.calculMoyenne() + " - " + j.getPseudo() + "\n";
+                i++;
+            }
+
+            Label classement = new Label();
+            classement.setFont(new Font(20));
+            classement.setText(text);
+
+            Label phraseFinal = new Label("Félicitation " + joueurOrdreMoyenne.get(0).getPseudo() + " !\nVous êtes le vainqueur de La Bonne Note !");
+            phraseFinal.setFont(new Font(22));
+
+            vBoxCenter.getChildren().addAll(classement, phraseFinal);
+        });
+    }
+
+    public void afficheMoyenne(ActionEvent actionEvent) {
+        Joueur j = joueurs.get(numeroJoueurTour());
+        Group root = new Group();
+        Stage stage = new Stage();
+        stage.setTitle("Moyenne de " + j.getPseudo());
+        stage.setScene(new Scene(root, 350, 420));
+        stage.setResizable(false);
+        stage.show();
+
+        Label labelListeNotes = new Label(j.afficheListNote());
+        labelListeNotes.setPadding(new Insets(4));
+        labelListeNotes.setFont(new Font(18));
+        root.getChildren().add(labelListeNotes);
     }
 
     public void afficheZonePseudo() {
@@ -182,7 +236,6 @@ public class Controller {
                 compteur++;
             }
         }
-
         this.btValidPseudo.setDisable(!(compteur >= 2));
     }
 
@@ -199,7 +252,6 @@ public class Controller {
 
         this.vBoxRight.setVisible(true);
         disabledZonePseudo();
-        afficheStatJoueur();
 
         this.vBoxJeu.setVisible(true);
         // Lancemant de la partie
@@ -232,31 +284,31 @@ public class Controller {
     }
 
     private void verifNotesEnAttente(){
-        Boolean disableButton = false;
+        boolean disableButton = false;
         try{
             Integer motivationUtilise = 0;
             Joueur j = this.joueurs.get(numeroJoueurTour());
 
-            Integer i = 0;
+            int i = 0;
             for(TextField tf : this.listZoneNote){
                 if(Integer.parseInt(tf.getText()) > (20 - j.getNoteEnAttente().get(i).getNoteSur20())){
                     disableButton = true;
-                    System.out.println("Erreur de note");
                 }
                 motivationUtilise += Integer.parseInt(tf.getText());
                 i++;
             }
 
-            Integer motivationRestante = j.getMotivation() - motivationUtilise;
+            int motivationRestante = j.getMotivation() - motivationUtilise;
             this.textPtMotivationRestant.setText(motivationRestante + "/" + j.motivationMax());
 
             if(motivationRestante < 0){
-                System.out.println("Erreur de motivation");
+                this.textPtMotivationRestant.setTextFill(Color.RED);
                 disableButton = true;
+            }else{
+                this.textPtMotivationRestant.setTextFill(Color.BLACK);
             }
         }
         catch (Exception e){
-            System.out.println("Erreur syntaxe");
             disableButton = true;
         }
 
@@ -264,24 +316,21 @@ public class Controller {
     }
 
     private void validNotesEnAttente(Joueur joueur) {
-            Integer motivationDepense = 0;
+        this.textPtMotivationRestant.setTextFill(Color.BLACK);
+        int i  = 0;
+        for(Note n : joueur.getNoteEnAttente()){
+            Integer noteSaisie = Integer.parseInt(this.listZoneNote[i].getText());
+            n.setNoteSur20(n.getNoteSur20() + noteSaisie);
 
-            Integer i  = 0;
-            for(Note n : joueur.getNoteEnAttente()){
-                Integer noteSaisie = Integer.parseInt(this.listZoneNote[i].getText());
-                n.setNoteSur20(n.getNoteSur20() + noteSaisie);
+            joueur.setMotivation(joueur.getMotivation() - noteSaisie);
+            i++;
+        }
 
-                motivationDepense += noteSaisie;
-                i++;
-            }
-
-            joueur.setMotivation(joueur.getMotivation() - motivationDepense);
-
-            for(TextField tf : this.listZoneNote){
-                tf.setText("0");
-            }
-            this.btValidNote.setDisable(true);
-            affichageGame();
+        for(TextField tf : this.listZoneNote){
+            tf.setText("0");
+        }
+        this.btValidNote.setDisable(true);
+        affichageGame();
     }
 
     private void afficheStatJoueur(){
@@ -310,52 +359,29 @@ public class Controller {
     }
 
     private void enableButtonJeu(Boolean enabled){
-        if(enabled){
-            for(TextField tf : this.listZoneNote){
-                tf.setDisable(false);
-            }
-            this.btValidNote.setDisable(false);
-            this.btLancerDee.setDisable(false);
-            this.btVoirMoyenne.setDisable(false);
-        }else{
-            for(TextField tf : this.listZoneNote){
-                tf.setDisable(true);
-            }
-            this.btValidNote.setDisable(true);
-            this.btLancerDee.setDisable(true);
-            this.btVoirMoyenne.setDisable(true);
+        for(TextField tf : this.listZoneNote){
+            tf.setDisable(!enabled);
         }
+        this.btValidNote.setDisable(!enabled);
+        this.btLancerDee.setDisable(!enabled);
+        this.btVoirMoyenne.setDisable(!enabled);
     }
 
     private Integer numeroJoueurTour(){
         return this.numeroTour % this.joueurs.size();
     }
 
-    /* <<< --- CONTENU DU JEU --- >>> */
-    public static ArrayList<Matiere> listeMatiere(){
-        ArrayList<Matiere> matiere = new ArrayList<>();
-        matiere.add(new Matiere("Anglais", 0)); // 0
-        matiere.add(new Matiere("Mathématique", 1)); // 1
-        matiere.add(new Matiere("Culture générale", 2 )); // 2
-        matiere.add(new Matiere("Eco Droit Management", 3)); // 3
-        matiere.add(new Matiere("Développement Web (SI6)", 4)); // 4
-        matiere.add(new Matiere("Android (SLAM 2)", 5)); // 5
-        matiere.add(new Matiere("Base de données (SLAM 1)", 6)); // 6
-        matiere.add(new Matiere("Serveur Web (SI5)", 7)); // 7
-        return matiere;
-    }
-
     public void helpWindow(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../view/help.fxml"));
         Stage stage = new Stage();
         stage.setTitle("En savoir plus de La Bonne Note");
-        stage.setScene(new Scene(root, 250, 320));
+        stage.setScene(new Scene(root,250,320));
         stage.setResizable(false);
         stage.show();
     }
 
     public void exitProgram(ActionEvent actionEvent) {
-
+        Platform.exit();
     }
 
 }

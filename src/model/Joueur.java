@@ -2,6 +2,7 @@ package model;
 
 import controller.Controller;
 import controller.Game;
+import javafx.scene.control.Label;
 
 import java.util.ArrayList;
 
@@ -42,14 +43,18 @@ public class Joueur {
 
     /**
      * Ajoute la note de la liste "noteEnAttente" correpondant à la matiére
+     * @param matiere Matière a laquelle ajouter la note
+     * @param travailNonFait si le joueur à tirer la carte "travail non fait" il à 0
+     * @param labelIndication Pour afficher le texte sur l'interface graphique
      */
-    public void ajouteNote(Matiere matiere, Boolean travailNonFait){
+    public void ajouteNote(Matiere matiere, Boolean travailNonFait, Label labelIndication){
         // Calcul le coefficient
         int coeficient = 1;
         if(matiere == this.specialite){
             coeficient = 3;
         }
 
+        String text = "";
         // Récupére la note de l'utilisateur et la remet à 0 dans "noteEnAttente"
         for(Note n : this.noteEnAttente){
             if(n.getMatiere().getId().equals(matiere.getId())){
@@ -57,14 +62,21 @@ public class Joueur {
 
                 if(!travailNonFait){
                     this.listNote.add(new Note(n.getNoteSur20(), matiere));
-                    System.out.println(this.pseudo + " à reçu un " + n.getNoteSur20() + " sur 20 en " + matiere.getNom() + "...");
+                    text = this.pseudo + " à reçu un " + n.getNoteSur20() + " sur 20 en " + matiere.getNom() + "...";
                     n.setNoteSur20(0);
                 }else{
                     this.listNote.add(new Note(0, matiere));
-                    System.out.println(this.pseudo + " à reçu un 0 pointé en " + matiere.getNom() + "...");
+                    text = this.pseudo + " à reçu un 0 pointé en " + matiere.getNom() + "...";
                 }
+
                 break;
             }
+        }
+
+        if(labelIndication != null){
+            labelIndication.setText(text);
+        }else{
+            System.out.println(text);
         }
     }
 
@@ -86,24 +98,29 @@ public class Joueur {
     }
 
     /**
-     * Affiche les notes du joueurs
+     * Affiche et retourne les notes du joueur
      */
-    public void afficheListNote(){
-        System.out.println("--- Liste de note de " + this.pseudo + " ---");
+    public String afficheListNote(){
+        String text = "";
+        text += "--- Liste de note de " + this.pseudo + " ---\n";
 
         if(this.listNote.size() > 0){
             for(Note n : this.listNote){
                 if(n.getMatiere().getCoef() == 3){
-                    System.out.println(" - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20 (Coef 3)");
+                    text += " - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20 (Coef 3)\n";
                 }else{
-                    System.out.println(" - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20");
+                    text += " - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20\n";
+
                 }
             }
 
-            System.out.println("Moyenne : " + calculMoyenne() + " sur 20");
+            text += "Moyenne : " + calculMoyenne() + " sur 20";
         }else{
-            System.out.println("Vous n'avez pas encore de note");
+            text += "Vous n'avez pas encore de note";
         }
+
+        System.out.println(text);
+        return text;
     }
 
     /**
@@ -121,14 +138,17 @@ public class Joueur {
     /**
      * Permet d'ajouter ou de retirer de la motivation
      * @param motivationPlus Valeur positive ou négative de motivation à ajouter
+     * @param cagnote Cagnote afin de pouvoir de l'incrémenté au cas ou le joueur est au max
+     * @param labelIndication Pour afficher le texte sur l'interface graphique
      */
-    public void ajouteMotivation(Integer motivationPlus, Cagnote cagnote){
+    public void ajouteMotivation(Integer motivationPlus, Cagnote cagnote, Label labelIndication){
         this.motivation += motivationPlus;
+        String text = "";
 
         if(motivationPlus >= 0){
-            System.out.println(this.pseudo + " gagne " + motivationPlus + " point de motivation(s)");
+            text = this.pseudo + " gagne " + motivationPlus + " point de motivation(s)\n";
         }else{
-            System.out.println(this.pseudo + " perd " + Math.abs(motivationPlus) + " point de motivation(s)");
+            text = this.pseudo + " perd " + Math.abs(motivationPlus) + " point de motivation(s)\n";
         }
 
         // Si le joueur à un nombre négatif de motivation on le met à 0
@@ -137,12 +157,18 @@ public class Joueur {
             cagnote.setPointMotivation(motivationEnTrop);
 
             this.motivation = this.motivationMax();
-            System.out.println("Cela dépasse la motivation max, " + this.pseudo + " envoie donc " + motivationEnTrop + " point de motivation dans la cagnote");
+            text += "Cela dépasse la motivation max, " + this.pseudo + " envoie donc " + motivationEnTrop + " point de motivation dans la cagnote";
         }else if(this.motivation < 0){
             this.motivation = 0;
-            System.out.println(this.pseudo + " n'a plus de motivation");
+            text += this.pseudo + " n'a plus de motivation";
         }else{
-            System.out.println(this.pseudo + " à donc " + this.motivation + " de motivation");
+            text += this.pseudo + " à donc " + this.motivation + " de motivation";
+        }
+
+        if(labelIndication != null){
+            labelIndication.setText(text);
+        }else{
+            System.out.println(text);
         }
     }
 

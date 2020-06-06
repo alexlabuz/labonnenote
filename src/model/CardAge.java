@@ -1,5 +1,8 @@
 package model;
 
+
+import javafx.scene.control.Label;
+
 public class CardAge extends Carte {
 
     public CardAge(String nom, String description,  String image){
@@ -7,8 +10,14 @@ public class CardAge extends Carte {
     }
 
     @Override
-    public void action(Joueur joueur, Matiere matiere, Cagnote cagnote) {
+    public void action(Joueur joueur, Matiere matiere, Cagnote cagnote, Label labelIndication) {
         joueur.anniversaire();
-        System.out.println("Joyeux anniversaire " + joueur.getPseudo() + ", vous avez maintenant " + joueur.getAge() + " ans !");
+
+        String text = "Joyeux anniversaire " + joueur.getPseudo() + ", vous avez maintenant " + joueur.getAge() + " ans !";
+        if(labelIndication != null){
+            labelIndication.setText(text);
+        }else{
+            System.out.println(text);
+        }
     }
 }

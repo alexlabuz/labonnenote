@@ -1,5 +1,8 @@
 package model;
 
+
+import javafx.scene.control.Label;
+
 public abstract class Carte {
 
     private String nom;
@@ -18,7 +21,7 @@ public abstract class Carte {
      * @param matiere La case matière ou il ce situe quand il tire la carte
      * @param cagnote La cagnote du jeux
      */
-    public abstract void action(Joueur joueur, Matiere matiere, Cagnote cagnote);
+    public abstract void action(Joueur joueur, Matiere matiere, Cagnote cagnote, Label labelIndication);
 
     public String getNom() {
         return nom;
