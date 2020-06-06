@@ -221,18 +221,25 @@ public class Game {
         cartes.add(new CardAjoutNote("Devoir surveillé !", "Ohh non, c'était aujourd'hui...", "", false));
         cartes.add(new CardAjoutNote("Projet", "Vous présentez votre projet et ... c'est noté !", "", false));
         cartes.add(new CardAjoutNote("TP noté", "Oh non, pas encore", "", false));
-        cartes.add(new CardMotivation("Bien dormi", "Quoi de mieux qu'une bonne nuit pour trouver de la motivation", "", 8));
-        cartes.add(new CardMotivation("Pas assez dormi", "Vous avez fait une nuit blanche", "", -4));
-        cartes.add(new CardMotivation("Beau temps", "Quel beau soleil, cela vous donne de la motivation", "", 4));
-        cartes.add(new CardMotivation("Mauvais temps", "Quelle pluit... pas la motivation de travailler", "", -2));
-        cartes.add(new CardMotivation("Rendez-vous", "Vous n'allez pas en cours, super un jour de repos !", "", 6));
-        cartes.add(new CardMotivation("Sèche les cours", "Aujourd'hui ce n'était vraiment pas le bon jour", "", -3));
-        cartes.add(new CardMotivation("En forme", "Aujourd'hui vous allez tout déchirer", "",12));
-        cartes.add(new CardMotivation("Maladie", "AIIGHT, la douleur que vous resentez est inimagimaginable", "",-6));
+
+        cartes.add(new CardAjoutNote("Interogation", "Allez ! je veux sur la table un stylo et une gomme", "", false));
+        cartes.add(new CardAjoutNote("Controle surprise", "Avez vous bien révisé ?!", "", false));
+        cartes.add(new CardAjoutNote("Devoir surveillé !", "Ohh non, c'était aujourd'hui...", "", false));
+
+        cartes.add(new CardMotivation("Bien dormi", "Quoi de mieux qu'une bonne nuit pour trouver de la motivation", "", 30));
+        cartes.add(new CardMotivation("Pas assez dormi", "Vous avez fait une nuit blanche", "", -3));
+        cartes.add(new CardMotivation("Beau temps", "Quel beau soleil, cela vous donne de la motivation", "", 10));
+        cartes.add(new CardMotivation("Mauvais temps", "Quelle pluit... pas la motivation de travailler", "", -1));
+        cartes.add(new CardMotivation("Rendez-vous", "Vous n'allez pas en cours, super un jour de repos !", "", 20));
+        cartes.add(new CardMotivation("Sèche les cours", "Aujourd'hui ce n'était vraiment pas le bon jour", "", -2));
+        cartes.add(new CardMotivation("En forme", "Aujourd'hui vous allez tout déchirer", "",50));
+        cartes.add(new CardMotivation("Maladie", "AIIGHT, la douleur que vous resentez est inimagimaginable", "",-5));
         cartes.add(new CardMotivation("Eleve sérieux", "Vous êtes un élève exemplaire", "", 20));
         cartes.add(new CardMotivation("Lendemain de soirée", "Vous ^étse boeuréehé@dei", "", -10));
+
         cartes.add(new CardAge("Anniversaire", "Vous fêtez votre anniversaire", ""));
         cartes.add(new CardAge("Maturité", "Vous devenez plus mature", ""));
+
         cartes.add(new CardCagnote("Cagnotte", "Vous récupérez la cagnote", ""));
         return cartes;
     }

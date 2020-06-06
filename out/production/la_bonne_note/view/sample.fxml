@@ -9,6 +9,7 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
          <Menu mnemonicParsing="false" text="Jeu">
+            <MenuItem mnemonicParsing="false" onAction="#resetGame" text="Recommençer" />
             <MenuItem mnemonicParsing="false" onAction="#exitProgram" text="Quitter" />
          </Menu>
          <Menu mnemonicParsing="false" text="Aide">
@@ -80,7 +81,7 @@
                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                   </HBox.margin>
                </Button>
-               <Button fx:id="btVoirMoyenne" mnemonicParsing="false" onAction="#afficheMoyenne" text="Voir moyenne">
+               <Button fx:id="btVoirMoyenne" mnemonicParsing="false" onAction="#afficheMoyenne" text="PRONOTE">
                   <HBox.margin>
                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                   </HBox.margin>

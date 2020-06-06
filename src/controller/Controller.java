@@ -15,7 +15,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -41,7 +40,7 @@ public class Controller {
     Cagnote cagnote = new Cagnote(0);
 
     private Integer numeroTour = 0;
-    int nbJoueurFini = 0;
+    private int nbJoueurFini = 0;
 
     @FXML private VBox vBoxLeft;
     @FXML private VBox vBoxRight;
@@ -62,10 +61,9 @@ public class Controller {
     @FXML private Label labelIndicationJeu;
 
     public Controller(){
-        Timeline timeline = new Timeline(new KeyFrame(
-                Duration.millis(1),
-                ae -> init()));
-        timeline.play();
+        PauseTransition load = new PauseTransition(Duration.seconds(0.001));
+        load.setOnFinished((e) -> init());
+        load.play();
     }
 
     private void init(){
@@ -77,7 +75,7 @@ public class Controller {
     private void affichageGame(){
         Joueur joueurActuel = this.joueurs.get(numeroJoueurTour());
 
-        this.labelAfficheInfoJoueur.setText("Au tour de " + joueurActuel.getPseudo() + "\n[Case : " + joueurActuel.getPositionCasePlateau() + "/31] " + "[Age : " + joueurActuel.getAge() + "]");
+        this.labelAfficheInfoJoueur.setText("Tour n°" + (this.numeroTour+1) + " : Au tour de " + joueurActuel.getPseudo() + "\n[Case : " + joueurActuel.getPositionCasePlateau() + "/31] " + "[" + joueurActuel.getAge() + " ans]");
         this.labelGameDisplay.setText("Que voulez-vous faire " + joueurActuel.getPseudo());
         this.textPtMotivationRestant.setText(joueurActuel.getMotivation() + "/" + joueurActuel.motivationMax());
 
@@ -94,6 +92,7 @@ public class Controller {
     private void lancerDee(ActionEvent actionEvent){
         Joueur j = this.joueurs.get(numeroJoueurTour());
         enableButtonJeu(false);
+
         VBox vBox = new VBox();
         vBox.setAlignment(Pos.CENTER);
         this.vBoxJeu.getChildren().add(vBox);
@@ -126,6 +125,7 @@ public class Controller {
 
                         label.setText(j.getPseudo() + " : " + cartePioche.getNom() + " - " + cartePioche.getDescription());
                         cartePioche.action(j, plateau.get(j.getPositionCasePlateau() - 1), cagnote, this.labelIndicationJeu);
+                        affichageGame();
                         joueurSuivant(vBox);
                     });
                     wait2.play();
@@ -170,14 +170,14 @@ public class Controller {
 
         btFin.setOnMouseClicked(mouseEvent -> {
             vBoxCenter.getChildren().remove(btFin);
-            this.labelAfficheInfoJoueur.setText("LES RESULTAT!");
+            this.labelAfficheInfoJoueur.setText("LES RESULTATS!");
 
             ArrayList<Joueur> joueurOrdreMoyenne = Game.triJoueurParMoyenne(joueurs);
 
             String text = "";
             Integer i = 1;
             for(Joueur j : joueurOrdreMoyenne){
-                text += i + ". " + j.calculMoyenne() + " - " + j.getPseudo() + "\n";
+                text += i + ". " + j.calculMoyenne() + " sur 20 - " + j.getPseudo() + "\n";
                 i++;
             }
 
@@ -185,7 +185,7 @@ public class Controller {
             classement.setFont(new Font(20));
             classement.setText(text);
 
-            Label phraseFinal = new Label("Félicitation " + joueurOrdreMoyenne.get(0).getPseudo() + " !\nVous êtes le vainqueur de La Bonne Note !");
+            Label phraseFinal = new Label("\nFélicitation " + joueurOrdreMoyenne.get(0).getPseudo() + " !\nVous êtes le vainqueur de La Bonne Note !");
             phraseFinal.setFont(new Font(22));
 
             vBoxCenter.getChildren().addAll(classement, phraseFinal);
@@ -253,7 +253,7 @@ public class Controller {
         }
 
         this.vBoxRight.setVisible(true);
-        disabledZonePseudo();
+        enabledZonePseudo(false);
 
         this.vBoxJeu.setVisible(true);
         // Lancemant de la partie
@@ -350,14 +350,14 @@ public class Controller {
         this.labelListeJoueur.setText(text);
     }
 
-    private void disabledZonePseudo(){
+    private void enabledZonePseudo(Boolean enabled){
         for(TextField tf : this.listZonePseudo){
-            tf.setDisable(true);
+            tf.setDisable(!enabled);
         }
         for(ComboBox cb : this.listBoxSpecialite){
-            cb.setDisable(true);
+            cb.setDisable(!enabled);
         }
-        this.btValidPseudo.setDisable(true);
+        this.btValidPseudo.setDisable(!enabled);
     }
 
     private void enableButtonJeu(Boolean enabled){
@@ -373,6 +373,20 @@ public class Controller {
         return this.numeroTour % this.joueurs.size();
     }
 
+    @FXML
+    private void resetGame(ActionEvent actionEvent){
+        this.joueurs.clear();
+        this.numeroTour = 0;
+        this.nbJoueurFini = 0;
+
+        this.vBoxRight.setVisible(false);
+        enabledZonePseudo(true);
+        this.vBoxJeu.setVisible(false);
+        this.labelListeJoueur.setText("");
+        this.labelAfficheInfoJoueur.setText("Bienvenue sur La Bonne Note");
+    }
+
+    @FXML
     public void helpWindow(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("../view/help.fxml"));
         Stage stage = new Stage();

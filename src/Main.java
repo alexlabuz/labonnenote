@@ -19,7 +19,16 @@ public class Main extends Application {
         stage.getIcons().add(new Image("image/lbnlogo.png"));
     }
 
-    public static void main(String[] args) {
-        launch(args);
+    public static void main(String[] args) throws InterruptedException {
+        /**
+         * TRUE = Mode graphique || FALSE = Mode console
+         */
+        boolean gui_mode = true;
+
+        if(gui_mode){
+            launch(args);
+        }else {
+            new Game();
+        }
     }
 }
