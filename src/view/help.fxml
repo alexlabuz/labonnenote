@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -12,6 +12,26 @@
             <Font size="33.0" />
          </font>
       </Label>
-      <Label text="Ce jeu est développé par\n Alex LABUZ, Mathieu PINES, Valantin LEVECQUE" />
+      <Label text="1.0" />
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label text="Développé par :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label text="Alex LABUZ" />
+            <Label text="Valentin LEVECQUE" />
+            <Label text="Mathieu PINES" />
+            <Label text="2020, Projet PPE Phase 2 pour le lycée Guy Mollet d'ARRAS">
+               <font>
+                  <Font size="13.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
    </children>
 </VBox>

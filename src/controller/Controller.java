@@ -12,6 +12,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.*;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -198,6 +199,7 @@ public class Controller {
         stage.setTitle("Moyenne de " + j.getPseudo());
         stage.setScene(new Scene(root, 350, 420));
         stage.setResizable(false);
+        stage.getIcons().add(new Image("image/lbnlogo.png"));
         stage.show();
 
         Label labelListeNotes = new Label(j.afficheListNote());
@@ -232,7 +234,7 @@ public class Controller {
     private void verifPseudo(){
         int compteur = 0;
         for(TextField tf : this.listZonePseudo){
-            if(tf.getText().length() > 2){
+            if(tf.getText().length() > 0){
                 compteur++;
             }
         }
@@ -243,7 +245,7 @@ public class Controller {
         this.joueurs.clear();
         int i = 0;
         for(TextField tf : this.listZonePseudo){
-            if(tf.getText().length() >= 2){
+            if(tf.getText().length() > 0){
                 Matiere specialite = (Matiere) this.listBoxSpecialite[i].getSelectionModel().getSelectedItem();
                 this.joueurs.add(new Joueur(tf.getText(), specialite));
             }
@@ -305,7 +307,7 @@ public class Controller {
                 this.textPtMotivationRestant.setTextFill(Color.RED);
                 disableButton = true;
             }else{
-                this.textPtMotivationRestant.setTextFill(Color.BLACK);
+                this.textPtMotivationRestant.setTextFill(Color.rgb(233,233,233));
             }
         }
         catch (Exception e){
@@ -316,7 +318,7 @@ public class Controller {
     }
 
     private void validNotesEnAttente(Joueur joueur) {
-        this.textPtMotivationRestant.setTextFill(Color.BLACK);
+        this.textPtMotivationRestant.setTextFill(Color.rgb(233,233,233));
         int i  = 0;
         for(Note n : joueur.getNoteEnAttente()){
             Integer noteSaisie = Integer.parseInt(this.listZoneNote[i].getText());
@@ -338,11 +340,11 @@ public class Controller {
         for(Joueur j : this.joueurs){
             text += "\n - " + j.getPseudo() +  " | ";
             if(j.getPositionCasePlateau() > 31){
-                text += "Partie terminé";
+                text += "[Partie terminé] ";
             }else{
-                text += "Case : " + j.getPositionCasePlateau() +"/31";
+                text += "[Case : " + j.getPositionCasePlateau() +"/31] ";
             }
-            text+= j.getSpecialite().getNom();
+            text += "[Motivation : " + j.getMotivation() + "/" + j.motivationMax()+"]";
         }
 
         this.labelListeJoueur.setText(text);
@@ -375,8 +377,9 @@ public class Controller {
         Parent root = FXMLLoader.load(getClass().getResource("../view/help.fxml"));
         Stage stage = new Stage();
         stage.setTitle("En savoir plus de La Bonne Note");
-        stage.setScene(new Scene(root,250,320));
+        stage.setScene(new Scene(root,350,380));
         stage.setResizable(false);
+        stage.getIcons().add(new Image("image/lbnlogo.png"));
         stage.show();
     }
 

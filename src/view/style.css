@@ -1,0 +1,23 @@
+BorderPane{
+    -fx-background-color: #3c3c32;
+}
+
+*{
+    -fx-font-family: calibri;
+}
+
+Label{
+    -fx-text-fill: #e9dfdf;
+}
+
+Button, TextField{
+    -fx-padding: 3;
+    -fx-background-color:#505042;
+    -fx-border-color: #666655;
+    -fx-text-fill: #e9dfdf;
+    -fx-font-size:15px;
+}
+
+Button:hover, TextField:hover{
+    -fx-background-color:#666661;
+}
