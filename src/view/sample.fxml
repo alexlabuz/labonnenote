@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
@@ -37,16 +38,48 @@
          <Label ellipsisString="" prefWidth="120.0" text="Saisissez combien vous souhaitez ajouter à chaques notes" textAlignment="CENTER" textOverrun="CLIP" wrapText="true" />
          <Button fx:id="btValidNote" disable="true" mnemonicParsing="false" text="Valider" />
          <HBox>
-            <Label text="Vos point(s) motivation(s) : "/>
-            <Label fx:id="textPtMotivation" text="0"/>
+            <Label text="Vos point(s) motivation(s) : " />
+            <Label fx:id="textPtMotivationRestant" text="0" />
          </HBox>
       </VBox>
    </right>
    <center>
-      <Label fx:id="listeJoueurText" alignment="TOP_CENTER" contentDisplay="TOP" text="Bienvenue sur La Bonne Note" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </Label>
+      <VBox fx:id="vBoxCenter" alignment="CENTER">
+         <Label fx:id="labelAfficheInfoJoueur" text="Bienvenue sur La Bonne Note" textAlignment="CENTER">
+            <font>
+               <Font size="24.0" />
+            </font>
+         </Label>
+         <!-- PARTIE VISIBLE EN MODE JEU -->
+         <VBox fx:id="vBoxJeu" alignment="TOP_CENTER" visible="false">
+            <Label fx:id="labelGameDisplay" text="TTETTETETET" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="189.0">
+               <Button fx:id="btLancerDee" mnemonicParsing="false" onAction="#lancerDee" text="Lançer dée">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+               </Button>
+               <Button fx:id="btVoirMoyenne" mnemonicParsing="false" text="Voir moyenne">
+                  <HBox.margin>
+                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  </HBox.margin>
+               </Button>
+            </HBox>
+            <Label fx:id="labelIndicationJeu" text="">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </VBox>
+      </VBox>
    </center>
+   <bottom>
+      <VBox fx:id="vBoxBottom" alignment="CENTER" BorderPane.alignment="CENTER">
+         <Label fx:id="labelListeJoueur" />
+      </VBox>
+   </bottom>
 </BorderPane>
