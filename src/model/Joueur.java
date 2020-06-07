@@ -50,7 +50,7 @@ public class Joueur {
     public void ajouteNote(Matiere matiere, Boolean travailNonFait, Label labelIndication){
         // Calcul le coefficient
         int coeficient = 1;
-        if(matiere == this.specialite){
+        if(matiere.getId().equals(this.specialite.getId())){
             coeficient = 3;
         }
 
@@ -68,7 +68,6 @@ public class Joueur {
                     this.listNote.add(new Note(0, matiere));
                     text = this.pseudo + " à reçu un 0 pointé en " + matiere.getNom() + "...";
                 }
-
                 break;
             }
         }

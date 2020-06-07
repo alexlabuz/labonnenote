@@ -146,6 +146,7 @@ public class Controller {
         Button btNext = new Button("Joueur suivant");
         vBox.getChildren().add(btNext);
         btNext.setOnMouseClicked(mouseEvent -> {
+            for(TextField tf : this.listZoneNote){tf.setText("0");}
             labelIndicationJeu.setText("");
             this.vBoxJeu.getChildren().remove(vBox);
 
