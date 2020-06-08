@@ -226,7 +226,7 @@ public class Game {
         //cartes.add(new CardMotivation("Pas assez dormi", "Vous avez fait une nuit blanche", "", -2));
         cartes.add(new CardMotivation("Beau temps", "Quel beau soleil, cela vous donne de la motivation", "", 10));
         //cartes.add(new CardMotivation("Mauvais temps", "Quelle pluit... pas la motivation de travailler", "", -1));
-        cartes.add(new CardMotivation("Rendez-vous", "Oh non, une ratez une journée de cours", "", -5));
+        cartes.add(new CardMotivation("Rendez-vous", "Oh non, vous ratez une journée de cours", "", -5));
         //cartes.add(new CardMotivation("Sèche les cours", "Aujourd'hui ce n'était vraiment pas le bon jour", "", -2));
         cartes.add(new CardMotivation("En forme", "Aujourd'hui vous allez tout déchirer", "",40));
         //cartes.add(new CardMotivation("Maladie", "AIIGHT, la douleur que vous resentez est inimagimaginable", "",-4));

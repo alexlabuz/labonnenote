@@ -294,7 +294,7 @@ public class Controller {
 
             int i = 0;
             for(TextField tf : this.listZoneNote){
-                if(Integer.parseInt(tf.getText()) > (20 - j.getNoteEnAttente().get(i).getNoteSur20())){
+                if(Integer.parseInt(tf.getText()) > (20 - j.getNoteEnAttente().get(i).getNoteSur20()) || Integer.parseInt(tf.getText()) < 0){
                     disableButton = true;
                 }
                 motivationUtilise += Integer.parseInt(tf.getText());
@@ -382,6 +382,7 @@ public class Controller {
 
         this.vBoxRight.setVisible(false);
         enabledZonePseudo(true);
+        enableButtonJeu(true);
         this.vBoxJeu.setVisible(false);
         this.labelListeJoueur.setText("");
         this.labelAfficheInfoJoueur.setText("Bienvenue sur La Bonne Note");

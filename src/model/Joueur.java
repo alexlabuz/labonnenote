@@ -145,9 +145,9 @@ public class Joueur {
         String text = "";
 
         if(motivationPlus >= 0){
-            text = this.pseudo + " gagne " + motivationPlus + " point de motivation(s)\n";
+            text = this.pseudo + " gagne " + motivationPlus + " point(s) de motivation(s)\n";
         }else{
-            text = this.pseudo + " perd " + Math.abs(motivationPlus) + " point de motivation(s)\n";
+            text = this.pseudo + " perd " + Math.abs(motivationPlus) + " point(s) de motivation(s)\n";
         }
 
         // Si le joueur à un nombre négatif de motivation on le met à 0
@@ -156,12 +156,12 @@ public class Joueur {
             cagnote.setPointMotivation(motivationEnTrop);
 
             this.motivation = this.motivationMax();
-            text += "Cela dépasse la motivation max, " + this.pseudo + " envoie donc " + motivationEnTrop + " point de motivation dans la cagnote";
+            text += "Cela dépasse la motivation max, " + this.pseudo + " envoie donc " + motivationEnTrop + " point(s) de motivation(s) dans la cagnote";
         }else if(this.motivation < 0){
             this.motivation = 0;
             text += this.pseudo + " n'a plus de motivation";
         }else{
-            text += this.pseudo + " à donc " + this.motivation + " de motivation";
+            text += this.pseudo + " à donc " + this.motivation + " de motivation(s)";
         }
 
         if(labelIndication != null){
