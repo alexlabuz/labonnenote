@@ -8,10 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="Avancement du code de la partie">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/model/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/model/Joueur.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/view/sample.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/CardCagnote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CardCagnote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/sample.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +53,16 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/view" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\view" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\image" />
       <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\view" />
@@ -155,22 +162,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591269163192" />
-    <state width="1877" height="164" key="GridCell.Tab.0.bottom" timestamp="1591621438536">
+    <state width="1877" height="312" key="GridCell.Tab.0.bottom" timestamp="1591903357817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="164" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591621438536" />
-    <state width="1877" height="164" key="GridCell.Tab.0.center" timestamp="1591621438536">
+    <state width="1877" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591903357817" />
+    <state width="1877" height="312" key="GridCell.Tab.0.center" timestamp="1591903357816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="164" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591621438536" />
-    <state width="1877" height="164" key="GridCell.Tab.0.left" timestamp="1591621438535">
+    <state width="1877" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591903357816" />
+    <state width="1877" height="312" key="GridCell.Tab.0.left" timestamp="1591903357816">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="164" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591621438535" />
-    <state width="1877" height="164" key="GridCell.Tab.0.right" timestamp="1591621438536">
+    <state width="1877" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591903357816" />
+    <state width="1877" height="312" key="GridCell.Tab.0.right" timestamp="1591903357817">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="164" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591621438536" />
+    <state width="1877" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591903357817" />
     <state x="880" y="53" key="SettingsEditor" timestamp="1591482318296">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

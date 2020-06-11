@@ -13,7 +13,7 @@ public class CardCagnote extends Carte {
         joueur.ajouteMotivation(cagnote.getPointMotivation(), cagnote, labelIndication);
         cagnote.setPointMotivation(0);
 
-        String text = "Vous récupérez la cagnote";
+        String text = "Vous récupérez la cagnotte";
         if(labelIndication != null){
             labelIndication.setText(text);
         }else{

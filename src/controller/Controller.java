@@ -218,7 +218,7 @@ public class Controller {
 
             TextField textField = new TextField();
             textField.setPromptText("Pseudo " + (i+1));
-            textField.setOnKeyReleased(keyEvent -> verifPseudo());
+            textField.setOnKeyTyped(keyEvent -> verifPseudo());
 
             comboBox.setItems(list);
             comboBox.getSelectionModel().select(0);
@@ -272,7 +272,7 @@ public class Controller {
             hBox.getChildren().addAll(label, label1);
 
             TextField textField = new TextField();
-            textField.setOnKeyReleased(keyEvent -> verifNotesEnAttente());
+            textField.setOnKeyTyped(keyEvent -> verifNotesEnAttente());
             textField.setText("0");
             this.listZoneNote[i] = textField;
             this.listLabelNotes[i] = label1;

@@ -58,10 +58,12 @@ public class Joueur {
         // Récupére la note de l'utilisateur et la remet à 0 dans "noteEnAttente"
         for(Note n : this.noteEnAttente){
             if(n.getMatiere().getId().equals(matiere.getId())){
-                matiere.setCoef(coeficient);
+
+                Matiere m = new Matiere(matiere.getNom(), matiere.getId());
+                m.setCoef(coeficient);
 
                 if(!travailNonFait){
-                    this.listNote.add(new Note(n.getNoteSur20(), matiere));
+                    this.listNote.add(new Note(n.getNoteSur20(), m));
                     text = this.pseudo + " à reçu un " + n.getNoteSur20() + " sur 20 en " + matiere.getNom() + "...";
                     n.setNoteSur20(0);
                 }else{
@@ -109,8 +111,8 @@ public class Joueur {
                     text += " - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20 (Coef 3)\n";
                 }else{
                     text += " - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20\n";
-
                 }
+                text += " coef : " + n.getMatiere().getCoef() + "\n\n";
             }
 
             text += "Moyenne : " + calculMoyenne() + " sur 20";
@@ -156,7 +158,7 @@ public class Joueur {
             cagnote.setPointMotivation(motivationEnTrop);
 
             this.motivation = this.motivationMax();
-            text += "Cela dépasse la motivation max, " + this.pseudo + " envoie donc " + motivationEnTrop + " point(s) de motivation(s) dans la cagnote";
+            text += "Cela dépasse la motivation max, " + this.pseudo + " envoie donc " + motivationEnTrop + " point(s) de motivation(s) dans la cagnotte";
         }else if(this.motivation < 0){
             this.motivation = 0;
             text += this.pseudo + " n'a plus de motivation";
