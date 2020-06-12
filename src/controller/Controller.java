@@ -97,7 +97,7 @@ public class Controller {
         vBox.setAlignment(Pos.CENTER);
         this.vBoxJeu.getChildren().add(vBox);
 
-        Label label = new Label("Vous jetez le dée...");
+        Label label = new Label("Vous jetez le dé...");
         vBox.getChildren().add(label);
 
         PauseTransition wait = new PauseTransition(Duration.seconds(2));
@@ -133,9 +133,8 @@ public class Controller {
 
             }else{
                 this.nbJoueurFini++;
-                label.setText("Vous obtenez un " + deeNumero);
-                Label label2 = new Label(j.getPseudo() + " à terminé la partie !");
-                vBox.getChildren().add(label2);
+                label.setText("Vous obtenez un " + deeNumero + "\n" +
+                        j.getPseudo() + " à terminé la partie !");
                 joueurSuivant(vBox);
             }
         });
@@ -154,7 +153,7 @@ public class Controller {
                 finPartie();
             }else{
                 this.numeroTour++;
-                while (this.joueurs.get(numeroJoueurTour()).getPositionCasePlateau() > 31){
+                while (this.joueurs.get(numeroJoueurTour()).getPositionCasePlateau() > plateau.size()){
                     this.numeroTour++;
                 }
                 affichageGame();

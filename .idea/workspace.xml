@@ -7,15 +7,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="Avancement du code de la partie">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/la_bonne_note_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/controller/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/model/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/model/Joueur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/view/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/model/Matiere.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/model/Matiere.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/model/Note.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/model/Note.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/view/help.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/view/help.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/CardCagnote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/CardCagnote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Joueur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/sample.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Matiere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Matiere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Note.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Note.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +62,13 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\view" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\image" />
       <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\view" />
       <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\outil" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\view" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -150,10 +152,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1245" y="230" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1591463603017" />
-    <state x="656" y="288" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591482303162">
+    <state x="656" y="288" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591970650915">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="288" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591482303162" />
+    <state x="656" y="288" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591970650915" />
     <state x="910" y="133" key="CommitChangelistDialog2" timestamp="1588276030651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -162,26 +164,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591269163192" />
-    <state width="1877" height="312" key="GridCell.Tab.0.bottom" timestamp="1591903357817">
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom" timestamp="1591974635482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="312" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591903357817" />
-    <state width="1877" height="312" key="GridCell.Tab.0.center" timestamp="1591903357816">
+    <state width="1877" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591974635482" />
+    <state width="1877" height="206" key="GridCell.Tab.0.center" timestamp="1591974635481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="312" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591903357816" />
-    <state width="1877" height="312" key="GridCell.Tab.0.left" timestamp="1591903357816">
+    <state width="1877" height="206" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591974635481" />
+    <state width="1877" height="206" key="GridCell.Tab.0.left" timestamp="1591974635481">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="312" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591903357816" />
-    <state width="1877" height="312" key="GridCell.Tab.0.right" timestamp="1591903357817">
+    <state width="1877" height="206" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591974635481" />
+    <state width="1877" height="206" key="GridCell.Tab.0.right" timestamp="1591974635482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="312" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591903357817" />
-    <state x="880" y="53" key="SettingsEditor" timestamp="1591482318296">
+    <state width="1877" height="206" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591974635482" />
+    <state x="669" y="91" width="1040" height="850" key="SettingsEditor" timestamp="1591970683487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="880" y="53" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591482318296" />
+    <state x="669" y="91" width="1040" height="850" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1591970683487" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1591475788152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

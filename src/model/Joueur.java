@@ -59,15 +59,12 @@ public class Joueur {
         for(Note n : this.noteEnAttente){
             if(n.getMatiere().getId().equals(matiere.getId())){
 
-                Matiere m = new Matiere(matiere.getNom(), matiere.getId());
-                m.setCoef(coeficient);
-
                 if(!travailNonFait){
-                    this.listNote.add(new Note(n.getNoteSur20(), m));
+                    this.listNote.add(new Note(n.getNoteSur20(), matiere, coeficient));
                     text = this.pseudo + " à reçu un " + n.getNoteSur20() + " sur 20 en " + matiere.getNom() + "...";
                     n.setNoteSur20(0);
                 }else{
-                    this.listNote.add(new Note(0, matiere));
+                    this.listNote.add(new Note(0, matiere, coeficient));
                     text = this.pseudo + " à reçu un 0 pointé en " + matiere.getNom() + "...";
                 }
                 break;
@@ -89,7 +86,7 @@ public class Joueur {
         double effectif = 0.0; // Nombre de note (en comptent les coeficients)
 
         for(Note n : this.listNote){
-            Integer coef = n.getMatiere().getCoef();
+            Integer coef = n.getCoef();
 
             totalSomme = totalSomme + n.getNoteSur20() * coef;
             effectif = effectif + coef;
@@ -107,12 +104,12 @@ public class Joueur {
 
         if(this.listNote.size() > 0){
             for(Note n : this.listNote){
-                if(n.getMatiere().getCoef() == 3){
+                if(n.getCoef() == 3){
                     text += " - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20 (Coef 3)\n";
                 }else{
                     text += " - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20\n";
                 }
-                text += " coef : " + n.getMatiere().getCoef() + "\n\n";
+                text += " coef : " + n.getCoef() + "\n\n";
             }
 
             text += "Moyenne : " + calculMoyenne() + " sur 20";
@@ -131,7 +128,7 @@ public class Joueur {
     private ArrayList<Note> initNoteEnAttente(){
         ArrayList<Note> listNoteEnAttente = new ArrayList<>();
         for(Matiere m : Game.listeMatiere()){
-            listNoteEnAttente.add(new Note(0, m));
+            listNoteEnAttente.add(new Note(0, m, 1));
         }
         return listNoteEnAttente;
     }
