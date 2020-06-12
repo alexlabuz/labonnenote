@@ -109,7 +109,6 @@ public class Joueur {
                 }else{
                     text += " - " + n.getMatiere().getNom() + " : " + n.getNoteSur20() + " sur 20\n";
                 }
-                text += " coef : " + n.getCoef() + "\n\n";
             }
 
             text += "Moyenne : " + calculMoyenne() + " sur 20";
