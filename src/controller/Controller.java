@@ -30,14 +30,14 @@ import static donnee.alea.alea;
 public class Controller {
     private ArrayList<Matiere> matieres = Game.listeMatiere();
     private ArrayList<Joueur> joueurs = new ArrayList<>();
-    ArrayList<Carte> cartes = listeCarte();
-    ArrayList<Matiere> plateau = listMatierePlateau(matieres);
+    private ArrayList<Carte> cartes = listeCarte();
+    private ArrayList<Matiere> plateau = listMatierePlateau(matieres);
 
     private TextField[] listZonePseudo = new TextField[6];
     private ComboBox[]  listBoxSpecialite = new ComboBox[6];
     private TextField[] listZoneNote = new TextField[matieres.size()];
     private Label[] listLabelNotes = new Label[matieres.size()];
-    Cagnote cagnote = new Cagnote(0);
+    private Cagnote cagnote = new Cagnote(0);
 
     private Integer numeroTour = 0;
     private int nbJoueurFini = 0;
@@ -75,7 +75,8 @@ public class Controller {
     private void affichageGame(){
         Joueur joueurActuel = this.joueurs.get(numeroJoueurTour());
 
-        this.labelAfficheInfoJoueur.setText("Tour n°" + (this.numeroTour+1) + " : Au tour de " + joueurActuel.getPseudo() + "\n[Case : " + joueurActuel.getPositionCasePlateau() + "/31] " + "[" + joueurActuel.getAge() + " ans]");
+        this.labelAfficheInfoJoueur.setText("Tour n°" + (this.numeroTour+1) + " : Au tour de " + joueurActuel.getPseudo() + "\n" +
+                "Case : " + joueurActuel.getPositionCasePlateau() + "/31 | " + joueurActuel.getAge() + " ans | Cagnotte : " + cagnote.getPointMotivation() + "");
         this.labelGameDisplay.setText("Que voulez-vous faire " + joueurActuel.getPseudo());
         this.textPtMotivationRestant.setText(joueurActuel.getMotivation() + "/" + joueurActuel.motivationMax());
 
@@ -98,6 +99,8 @@ public class Controller {
         this.vBoxJeu.getChildren().add(vBox);
 
         Label label = new Label("Vous jetez le dé...");
+        label.setFont(new Font(16.0));
+        label.setPadding(new Insets(5));
         vBox.getChildren().add(label);
 
         PauseTransition wait = new PauseTransition(Duration.seconds(2));

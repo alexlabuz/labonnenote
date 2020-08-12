@@ -8,6 +8,10 @@ public class Cagnote {
         this.pointMotivation = pointMotivation;
     }
 
+    public void ajoutPointMotivation(Integer point){
+        this.pointMotivation += point;
+    }
+
     public Integer getPointMotivation() {
         return pointMotivation;
     }

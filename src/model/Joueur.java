@@ -151,13 +151,13 @@ public class Joueur {
         // Si le joueur à un nombre négatif de motivation on le met à 0
         if(this.motivation > this.motivationMax()){
             int motivationEnTrop = this.motivation - this.motivationMax();
-            cagnote.setPointMotivation(motivationEnTrop);
+            cagnote.ajoutPointMotivation(motivationEnTrop);
 
             this.motivation = this.motivationMax();
             text += "Cela dépasse la motivation max, " + this.pseudo + " envoie donc " + motivationEnTrop + " point(s) de motivation(s) dans la cagnotte";
         }else if(this.motivation < 0){
             int motivationEnMoins = this.motivation / -1; // Transforme la valeur négative en valeur positive
-            cagnote.setPointMotivation(motivationEnMoins);
+            cagnote.ajoutPointMotivation(motivationEnMoins);
 
             this.motivation = 0;
             text += this.pseudo + " n'a plus de motivation, " + this.pseudo + " envoie donc " + motivationEnMoins + " point(s) de motivation(s) dans la cagnotte";
