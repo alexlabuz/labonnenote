@@ -7,11 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="98ed955f-bc25-4420-b7a9-7306c1453c97" name="Default Changelist" comment="Avancement du code de la partie">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/la_bonne_note_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/model/Joueur.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/model/Joueur.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/la_bonne_note/view/help.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/la_bonne_note/view/help.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Joueur.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,20 +48,20 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/view" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\view" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\image" />
       <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\view" />
       <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\outil" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Alex\Desktop\Projet_PPE\labonnenote\src\view" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -97,6 +95,18 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -127,18 +137,14 @@
     <option name="LAST_COMMIT_MESSAGE" value="Avancement du code de la partie" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="179" key="#Updates" timestamp="1585824106515">
+    <state x="552" y="179" key="#Project_Structure" timestamp="1597234279661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="179" key="#Updates/0.0.1920.1040@0.0.1920.1040" timestamp="1585824106515" />
+    <state x="552" y="179" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1597234279661" />
     <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1591399931660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591399931660" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588258588750">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588258588750" />
     <state x="726" y="323" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591472576761">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -151,30 +157,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="288" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591970650915" />
-    <state x="910" y="133" key="CommitChangelistDialog2" timestamp="1588276030651">
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1597234288628">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="910" y="133" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588276030651" />
+    <state x="808" y="410" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597234288628" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1591269163192">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591269163192" />
-    <state width="1877" height="206" key="GridCell.Tab.0.bottom" timestamp="1591986169743">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1597234975592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591986169743" />
-    <state width="1877" height="206" key="GridCell.Tab.0.center" timestamp="1591986169743">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597234975592" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1597234975592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591986169743" />
-    <state width="1877" height="206" key="GridCell.Tab.0.left" timestamp="1591986169743">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597234975592" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1597234975592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591986169743" />
-    <state width="1877" height="206" key="GridCell.Tab.0.right" timestamp="1591986169743">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597234975592" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1597234975592">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="206" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591986169743" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597234975592" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1597234466064">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597234466064" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1597234466064">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597234466064" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1597234466064">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597234466064" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1597234466064">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597234466064" />
     <state x="669" y="91" width="1040" height="850" key="SettingsEditor" timestamp="1591984607510">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -183,10 +205,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040@0.0.1920.1040" timestamp="1591475788152" />
-    <state x="875" y="256" key="Vcs.Push.Dialog.v2" timestamp="1585584338498">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="875" y="256" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585584338498" />
     <state x="783" y="429" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1589477254188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -203,10 +221,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="148" key="refactoring.ChangeSignatureDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590674464550" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1585691188883">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585691188883" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589573419395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
